@@ -30,4 +30,30 @@ public class PlayerControl : MonoBehaviour
         
 
     }
+
+    void OnTriggerEnter2D(Collider2D col)
+    {
+        CheckTag(col.gameObject.tag);
+    } 
+
+    void CheckTag(string tag)
+    {
+        switch(tag)
+        {
+            case "Coin":
+            {
+                Debug.Log("Coin picked up!");
+                break;
+            }
+            case "Pool":
+            {
+                Debug.Log("Can Deposit Money!");
+                break;
+            }
+            default:
+            {
+                break;
+            }
+        }
+    }
 }
