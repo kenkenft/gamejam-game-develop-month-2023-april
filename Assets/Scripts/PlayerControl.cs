@@ -5,11 +5,9 @@ using UnityEngine;
 public class PlayerControl : MonoBehaviour
 {
     [SerializeField] private float _playerSpeed = 10.0f;
-    [SerializeField] private int _coinCapacity = 10;
-    private Vector2 _moveXY = new Vector2(0f, 0f);
-    public Rigidbody2D PlayerRig;
-    public Collider2D PlayerCollider;
     
+    private Vector2 _moveXY = new Vector2(0f, 0f);
+    public Rigidbody2D PlayerRig;    
     
     void Update()
     {
@@ -31,29 +29,5 @@ public class PlayerControl : MonoBehaviour
 
     }
 
-    void OnTriggerEnter2D(Collider2D col)
-    {
-        CheckTag(col.gameObject.tag);
-    } 
-
-    void CheckTag(string tag)
-    {
-        switch(tag)
-        {
-            case "Coin":
-            {
-                Debug.Log("Coin picked up!");
-                break;
-            }
-            case "Pool":
-            {
-                Debug.Log("Can Deposit Money!");
-                break;
-            }
-            default:
-            {
-                break;
-            }
-        }
-    }
+    
 }
