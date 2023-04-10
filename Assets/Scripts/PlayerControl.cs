@@ -22,11 +22,7 @@ public class PlayerControl : MonoBehaviour
         _moveXY[1] = Input.GetAxis("Vertical") * _playerSpeed;
 
         if( _moveXY[0] !=0 || _moveXY[1] !=0)
-        {
             PlayerRig.velocity = _moveXY;
-        }
-        
-
     }
 
     

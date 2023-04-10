@@ -4,26 +4,31 @@ using UnityEngine;
 
 public class PlayerStorage : MonoBehaviour
 {
-    [SerializeField] private int _coinCapacity = 10;
-    [SerializeField] private List<GameObject>  _coinsCollected = new List<GameObject>(){};
+    [SerializeField] private int _coinCapacityMax = 10, _coinCapacityUsed = 0;
+    [SerializeField] private List<CoinBehaviour>  _coinsCollected = new List<CoinBehaviour>(){};
+    private bool _isCoinCollided = false, _isPoolCollided = false;
 
     void OnTriggerEnter2D(Collider2D col)
     {
-        CheckTag(col.gameObject.tag);
+        CheckColliderTag(col.gameObject.tag);
+        if(_isCoinCollided && (_coinCapacityUsed < _coinCapacityMax) )
+            PickUpCoin(col.gameObject.GetComponent<CoinBehaviour>());
     } 
 
-    void CheckTag(string tag)
+    void CheckColliderTag(string tag)
     {
         switch(tag)
         {
             case "Coin":
             {
                 Debug.Log("Coin picked up!");
+                _isCoinCollided = true;
                 break;
             }
             case "Pool":
             {
                 Debug.Log("Can Deposit Money!");
+                _isPoolCollided = true;
                 break;
             }
             default:
@@ -31,5 +36,12 @@ public class PlayerStorage : MonoBehaviour
                 break;
             }
         }
+    }
+
+    void PickUpCoin(CoinBehaviour coin)
+    {
+        _isCoinCollided = false;
+        _coinCapacityUsed += 1;
+        _coinsCollected.Add(coin);
     }
 }
