@@ -8,6 +8,8 @@ public class PlayerStorage : MonoBehaviour
     [SerializeField] private List<CoinBehaviour>  _coinsCollected = new List<CoinBehaviour>(){};
     private bool _isCoinCollided = false, _isPoolCollided = false;
 
+    [HideInInspector] public delegate void OnInteractKeyDown(bool state);
+    [HideInInspector] public static OnInteractKeyDown CheckCanDeposit;
     void OnTriggerEnter2D(Collider2D col)
     {
         CheckColliderTag(col.gameObject.tag);
@@ -44,4 +46,6 @@ public class PlayerStorage : MonoBehaviour
         _coinCapacityUsed += 1;
         _coinsCollected.Add(coin);
     }
+
+     
 }

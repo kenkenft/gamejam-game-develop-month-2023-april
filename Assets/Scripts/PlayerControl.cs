@@ -12,6 +12,8 @@ public class PlayerControl : MonoBehaviour
     void Update()
     {
         Move();
+        if(Input.GetKeyDown(KeyCode.E))
+            CheckCanDeposit();
     }
 
     private void Move()
@@ -23,6 +25,11 @@ public class PlayerControl : MonoBehaviour
 
         if( _moveXY[0] !=0 || _moveXY[1] !=0)
             PlayerRig.velocity = _moveXY;
+    }
+
+    void CheckCanDeposit()
+    {
+        Debug.Log("E-key pressed!");
     }
 
     
