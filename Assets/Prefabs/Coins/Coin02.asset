@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24f93a0e27544224f9e42d9668dd610e, type: 3}
   m_Name: Coin02
   m_EditorClassIdentifier: 
-  CoinSprite: {fileID: 0}
+  CoinSprite: {fileID: 21300000, guid: 9d5785e027c000f448448185a5d55bbc, type: 3}
   CoinValue: 6
   CoinWeight: 3

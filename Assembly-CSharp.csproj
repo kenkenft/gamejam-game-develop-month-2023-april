@@ -36,9 +36,9 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-     <Compile Include="Assets\Scripts\PlayerControl.cs" />
-     <Compile Include="Assets\Scripts\CoinScriptable.cs" />
      <Compile Include="Assets\Scripts\CoinBehaviour.cs" />
+     <Compile Include="Assets\Scripts\CoinScriptable.cs" />
+     <Compile Include="Assets\Scripts\PlayerControl.cs" />
     <Reference Include="UnityEngine">
         <HintPath>C:\Program Files\Unity\Hub\Editor\2021.3.16f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
     </Reference>
