@@ -6,10 +6,21 @@ public class PlayerStorage : MonoBehaviour
 {
     [SerializeField] private int _coinCapacityMax = 10, _coinCapacityUsed = 0;
     [SerializeField] private List<CoinBehaviour>  _coinsCollected = new List<CoinBehaviour>(){};
-    private bool _isCoinCollided = false, _isPoolCollided = false;
+    private bool _isCoinCollided = false, _canDeposit = false;
 
     [HideInInspector] public delegate void OnInteractKeyDown(bool state);
-    [HideInInspector] public static OnInteractKeyDown CheckCanDeposit;
+    [HideInInspector] public static OnInteractKeyDown SomethingElse;
+    
+    void OnEnable()
+    {
+        PlayerControl.CheckCanDeposit += GetCanDeposit;
+    }
+
+    void OnDisable()
+    {
+        PlayerControl.CheckCanDeposit -= GetCanDeposit;
+    }
+    
     void OnTriggerEnter2D(Collider2D col)
     {
         CheckColliderTag(col.gameObject.tag);
@@ -17,20 +28,25 @@ public class PlayerStorage : MonoBehaviour
             PickUpCoin(col.gameObject.GetComponent<CoinBehaviour>());
     } 
 
+    void OnTriggerExit2D(Collider2D col)
+    {
+        CheckColliderTag(col.gameObject.tag);
+    }
+
     void CheckColliderTag(string tag)
     {
         switch(tag)
         {
             case "Coin":
-            {
-                Debug.Log("Coin picked up!");
-                _isCoinCollided = true;
+            {  
+                _isCoinCollided = !_isCoinCollided;
+                Debug.Log("Coin case: " + _isCoinCollided);
                 break;
             }
             case "Pool":
             {
-                Debug.Log("Can Deposit Money!");
-                _isPoolCollided = true;
+                _canDeposit = !_canDeposit;
+                Debug.Log("Pool case: " + _canDeposit);
                 break;
             }
             default:
@@ -42,10 +58,13 @@ public class PlayerStorage : MonoBehaviour
 
     void PickUpCoin(CoinBehaviour coin)
     {
-        _isCoinCollided = false;
         _coinCapacityUsed += 1;
         _coinsCollected.Add(coin);
+        coin.gameObject.SetActive(false);
     }
 
-     
+     bool GetCanDeposit()
+     {
+        return _canDeposit;
+     }
 }

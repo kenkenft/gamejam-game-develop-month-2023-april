@@ -8,12 +8,17 @@ public class PlayerControl : MonoBehaviour
     
     private Vector2 _moveXY = new Vector2(0f, 0f);
     public Rigidbody2D PlayerRig;    
+
+    private bool _canDeposit = false;
+
+    [HideInInspector] public delegate bool OnInteractKeyDown();
+    [HideInInspector] public static OnInteractKeyDown CheckCanDeposit;
     
     void Update()
     {
         Move();
         if(Input.GetKeyDown(KeyCode.E))
-            CheckCanDeposit();
+            CheckInteractContext();
     }
 
     private void Move()
@@ -27,9 +32,17 @@ public class PlayerControl : MonoBehaviour
             PlayerRig.velocity = _moveXY;
     }
 
-    void CheckCanDeposit()
+    void CheckInteractContext()
     {
         Debug.Log("E-key pressed!");
+        if(CheckCanDeposit.Invoke())
+        {
+            Debug.Log("Depositing money!");
+        }
+        else
+        {
+            Debug.Log("Can't deposit! Doing something else");
+        }
     }
 
     
