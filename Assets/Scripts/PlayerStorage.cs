@@ -14,11 +14,13 @@ public class PlayerStorage : MonoBehaviour
     void OnEnable()
     {
         PlayerControl.CheckCanDeposit += GetCanDeposit;
+        PlayerControl.CallDepositCoins += DepositCoins;
     }
 
     void OnDisable()
     {
         PlayerControl.CheckCanDeposit -= GetCanDeposit;
+        PlayerControl.CallDepositCoins -= DepositCoins;
     }
     
     void OnTriggerEnter2D(Collider2D col)
@@ -66,5 +68,13 @@ public class PlayerStorage : MonoBehaviour
      bool GetCanDeposit()
      {
         return _canDeposit;
+     }
+
+     void DepositCoins()
+     {
+        for(int i = 0; i < _coinsCollected.Count; i++)
+        {
+            Debug.Log("Coin no.: " + i + ". Coin value: " + _coinsCollected[i].Value);
+        }
      }
 }

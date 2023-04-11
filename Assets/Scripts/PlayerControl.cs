@@ -9,10 +9,11 @@ public class PlayerControl : MonoBehaviour
     private Vector2 _moveXY = new Vector2(0f, 0f);
     public Rigidbody2D PlayerRig;    
 
-    private bool _canDeposit = false;
-
     [HideInInspector] public delegate bool OnInteractKeyDown();
     [HideInInspector] public static OnInteractKeyDown CheckCanDeposit;
+
+    [HideInInspector] public delegate void OnCanDepositTrue();
+    [HideInInspector] public static OnCanDepositTrue CallDepositCoins;
     
     void Update()
     {
@@ -38,6 +39,7 @@ public class PlayerControl : MonoBehaviour
         if(CheckCanDeposit.Invoke())
         {
             Debug.Log("Depositing money!");
+            CallDepositCoins?.Invoke();
         }
         else
         {
