@@ -8,8 +8,8 @@ public class PlayerStorage : MonoBehaviour
     [SerializeField] private List<CoinBehaviour>  _coinsCollected = new List<CoinBehaviour>(){};
     private bool _isCoinCollided = false, _canDeposit = false;
 
-    [HideInInspector] public delegate void OnInteractKeyDown(bool state);
-    [HideInInspector] public static OnInteractKeyDown SomethingElse;
+    [HideInInspector] public delegate void OnDepositCoin(CoinBehaviour coinBehaviour);
+    [HideInInspector] public static OnDepositCoin DepositCoin;
     
     void OnEnable()
     {
@@ -72,9 +72,13 @@ public class PlayerStorage : MonoBehaviour
 
      void DepositCoins()
      {
-        for(int i = 0; i < _coinsCollected.Count; i++)
+        int index = 0;
+        for(int i = _coinsCollected.Count; i > 0 ; i--)
         {
-            Debug.Log("Coin no.: " + i + ". Coin value: " + _coinsCollected[i].Value);
+            index = i-1;
+            Debug.Log("Coin no.: " + i + ". Coin value: " + _coinsCollected[index].Value);
+            DepositCoin?.Invoke(_coinsCollected[index]);
+            _coinsCollected.RemoveAt(index);
         }
      }
 }

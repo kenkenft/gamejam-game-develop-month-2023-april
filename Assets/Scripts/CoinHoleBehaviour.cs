@@ -4,15 +4,20 @@ using UnityEngine;
 
 public class CoinHoleBehaviour : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] private int _totalCoinValue = 0;
+
+    void OnEnable()
     {
-        
+        PlayerStorage.DepositCoin += DepositCoin;
     }
 
-    // Update is called once per frame
-    void Update()
+    void OnDisable()
     {
-        
+        PlayerStorage.DepositCoin -= DepositCoin;
+    }
+
+    void DepositCoin(CoinBehaviour droppedCoin)
+    {
+        _totalCoinValue += droppedCoin.Value;
     }
 }
