@@ -10,6 +10,8 @@ public class PlayerStorage : MonoBehaviour
 
     [HideInInspector] public delegate void OnDepositCoin(CoinBehaviour coinBehaviour);
     [HideInInspector] public static OnDepositCoin DepositCoin;
+    [HideInInspector] public delegate void OnPlaySFX(string audioName);
+    [HideInInspector] public static OnPlaySFX PlaySFX;
     
     void OnEnable()
     {
@@ -43,6 +45,7 @@ public class PlayerStorage : MonoBehaviour
             {  
                 _isCoinCollided = !_isCoinCollided;
                 Debug.Log("Coin case: " + _isCoinCollided);
+                PlaySFX?.Invoke("coinPickup");
                 break;
             }
             case "Pool":
@@ -73,12 +76,20 @@ public class PlayerStorage : MonoBehaviour
      void DepositCoins()
      {
         int index = 0;
-        for(int i = _coinsCollected.Count; i > 0 ; i--)
+        if(_coinsCollected.Count > 0)
+        {    
+            for(int i = _coinsCollected.Count; i > 0 ; i--)
+            {
+                index = i-1;
+                Debug.Log("Coin no.: " + i + ". Coin value: " + _coinsCollected[index].Value);
+                DepositCoin?.Invoke(_coinsCollected[index]);
+                _coinsCollected.RemoveAt(index);
+            }
+            PlaySFX?.Invoke("deposit");
+        }
+        else
         {
-            index = i-1;
-            Debug.Log("Coin no.: " + i + ". Coin value: " + _coinsCollected[index].Value);
-            DepositCoin?.Invoke(_coinsCollected[index]);
-            _coinsCollected.RemoveAt(index);
+            PlaySFX?.Invoke("fail");
         }
      }
 }

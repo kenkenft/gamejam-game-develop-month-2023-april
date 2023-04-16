@@ -14,6 +14,9 @@ public class PlayerControl : MonoBehaviour
 
     [HideInInspector] public delegate void OnCanDepositTrue();
     [HideInInspector] public static OnCanDepositTrue CallDepositCoins;
+
+    [HideInInspector] public delegate void OnPlaySFX(string audioName);
+    [HideInInspector] public static OnPlaySFX PlaySFX;
     
     void Update()
     {
@@ -44,7 +47,9 @@ public class PlayerControl : MonoBehaviour
         else
         {
             Debug.Log("Can't deposit! Doing something else");
+            PlaySFX?.Invoke("fail");
         }
+        
     }
 
     

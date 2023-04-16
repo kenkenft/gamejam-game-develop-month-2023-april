@@ -1,0 +1,4 @@
+interface IPlaySound
+{
+    void PlaySound();
+}
