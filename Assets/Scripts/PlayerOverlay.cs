@@ -1,0 +1,48 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+// using TMPro;
+
+public class PlayerOverlay : MonoBehaviour
+{
+    ScoreTextProperties scoreTextProperties;
+    Timer timer;
+    Canvas playerOverlayCanvas;
+
+    void Start()
+    {
+        SetUp();
+        StartTimer(15);
+    }
+    
+    public void SetUp()
+    {
+        playerOverlayCanvas = GetComponentInChildren<Canvas>();
+        
+        scoreTextProperties = GetComponentInChildren<ScoreTextProperties>();
+        timer = GetComponentInChildren<Timer>();
+    }
+
+    public void ResetOverlay()
+    {
+        scoreTextProperties.ResetScore();
+    }
+
+
+    public int GetFinalScore()
+    {
+        return scoreTextProperties.GetCurrentScore();
+    }
+
+
+    public void TogglePlayerOverlayCanvas(bool state)
+    {
+        playerOverlayCanvas.enabled = state;
+    }
+
+    public void StartTimer(int startTime)
+    {
+        StartCoroutine(timer.Countdown(startTime));
+    }
+
+}

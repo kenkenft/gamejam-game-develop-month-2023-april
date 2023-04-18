@@ -40,11 +40,14 @@
      <Compile Include="Assets\Scripts\CoinBehaviour.cs" />
      <Compile Include="Assets\Scripts\IPlaySound.cs" />
      <Compile Include="Assets\Scripts\CoinHoleBehaviour.cs" />
+     <Compile Include="Assets\Scripts\GameProperties.cs" />
      <Compile Include="Assets\Scripts\CoinScriptable.cs" />
      <Compile Include="Assets\Scripts\PlayerStorage.cs" />
      <Compile Include="Assets\Scripts\AudioManager.cs" />
      <Compile Include="Assets\Scripts\PlayerControl.cs" />
-     <Compile Include="Assets\Scripts\GameProperties.cs" />
+     <Compile Include="Assets\Scripts\Timer.cs" />
+     <Compile Include="Assets\Scripts\PlayerOverlay.cs" />
+     <Compile Include="Assets\Scripts\ScoreTextProperties.cs" />
     <Reference Include="UnityEngine">
         <HintPath>C:\Program Files\Unity\Hub\Editor\2021.3.16f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
     </Reference>
