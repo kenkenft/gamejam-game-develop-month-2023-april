@@ -698,37 +698,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b17f21ffa6ecdd54cb20979ae6cfbefd, type: 3}
---- !u!1 &2035613401
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2035613402}
-  m_Layer: 0
-  m_Name: CoinSpawner
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2035613402
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2035613401}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 13.023632, y: 4.770396, z: 1.9095703}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 9
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &882156279843362173
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -891,6 +860,67 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b5b682033bebb1c4fb5d21984dc00de8, type: 3}
+--- !u!1001 &4007923476168059507
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 150576499322046894, guid: 7d093420faf8b264dac3899f57923f6d, type: 3}
+      propertyPath: coinPrefab
+      value: 
+      objectReference: {fileID: 5009580196961016647, guid: b5b682033bebb1c4fb5d21984dc00de8, type: 3}
+    - target: {fileID: 4007923476817433769, guid: 7d093420faf8b264dac3899f57923f6d, type: 3}
+      propertyPath: m_RootOrder
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 4007923476817433769, guid: 7d093420faf8b264dac3899f57923f6d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 13.023632
+      objectReference: {fileID: 0}
+    - target: {fileID: 4007923476817433769, guid: 7d093420faf8b264dac3899f57923f6d, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 4.770396
+      objectReference: {fileID: 0}
+    - target: {fileID: 4007923476817433769, guid: 7d093420faf8b264dac3899f57923f6d, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1.9095703
+      objectReference: {fileID: 0}
+    - target: {fileID: 4007923476817433769, guid: 7d093420faf8b264dac3899f57923f6d, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4007923476817433769, guid: 7d093420faf8b264dac3899f57923f6d, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4007923476817433769, guid: 7d093420faf8b264dac3899f57923f6d, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4007923476817433769, guid: 7d093420faf8b264dac3899f57923f6d, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4007923476817433769, guid: 7d093420faf8b264dac3899f57923f6d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4007923476817433769, guid: 7d093420faf8b264dac3899f57923f6d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4007923476817433769, guid: 7d093420faf8b264dac3899f57923f6d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4007923476817433770, guid: 7d093420faf8b264dac3899f57923f6d, type: 3}
+      propertyPath: m_Name
+      value: CoinSpawner
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 7d093420faf8b264dac3899f57923f6d, type: 3}
 --- !u!1001 &4108169242538465976
 PrefabInstance:
   m_ObjectHideFlags: 0
