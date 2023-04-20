@@ -8,10 +8,10 @@ public class CoinBehaviour : MonoBehaviour
     [SerializeField] private SpriteRenderer _coinSpriteRenderer;
     public int Value, Weight;
 
-    void Start()
-    {
-        SetUpCoin();
-    }
+    // void Start()
+    // {
+    //     SetUpCoin();
+    // }
     
     public void SetUpCoin()
     {
