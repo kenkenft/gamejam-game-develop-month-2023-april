@@ -5,13 +5,17 @@ using UnityEngine;
 public class PlayerStorage : MonoBehaviour
 {
     [SerializeField] private int _coinCapacityMax = 10, _coinCapacityUsed = 0;
+    private int[] _bonusMultiplier = {0, 100, 103, 106, 109, 115, 124, 139, 163, 202, 265};
     [SerializeField] private List<CoinBehaviour>  _coinsCollected = new List<CoinBehaviour>(){};
     private bool _isCoinCollided = false, _canDeposit = false;
+    private List<CoinScriptable> _coinTypes = new List<CoinScriptable>();
 
-    [HideInInspector] public delegate void OnDepositCoin(CoinBehaviour coinBehaviour);
+    // [HideInInspector] public delegate void OnDepositCoin(CoinBehaviour coinBehaviour);
+    [HideInInspector] public delegate void OnDepositCoin(int intValue);
     [HideInInspector] public static OnDepositCoin DepositCoin;
     [HideInInspector] public delegate void OnPlaySFX(string audioName);
     [HideInInspector] public static OnPlaySFX PlaySFX;
+    
     
     void OnEnable()
     {
@@ -23,6 +27,13 @@ public class PlayerStorage : MonoBehaviour
     {
         PlayerControl.CheckCanDeposit -= GetCanDeposit;
         PlayerControl.CallDepositCoins -= DepositCoins;
+    }
+
+    void Start()
+    {
+        Debug.Log("_coinTypes:" + _coinTypes.Count);
+        _coinTypes.AddRange(GameProperties.GetCoinScriptables());
+        Debug.Log("_coinTypes:" + _coinTypes.Count);
     }
     
     void OnTriggerEnter2D(Collider2D col)
@@ -84,7 +95,8 @@ public class PlayerStorage : MonoBehaviour
             {
                 index = i-1;
                 Debug.Log("Coin no.: " + i + ". Coin value: " + _coinsCollected[index].Value);
-                DepositCoin?.Invoke(_coinsCollected[index]);
+                // DepositCoin?.Invoke(_coinsCollected[index]);
+                DepositCoin?.Invoke(CalcCoinScore());
                 _coinsCollected.RemoveAt(index);
             }
             _coinCapacityUsed = 0;
@@ -94,5 +106,33 @@ public class PlayerStorage : MonoBehaviour
         {
             PlaySFX?.Invoke("fail");
         }
+     }
+
+     int CalcCoinScore()
+     {
+        int score = 0;
+
+        int[] coinTypeTally = new int[_coinTypes.Count];
+
+        foreach(CoinBehaviour coin in _coinsCollected)
+        {
+            for(int i = 0; i < _coinTypes.Count; i++)
+            {
+                if(coin.Value == _coinTypes[i].CoinValue)
+                {    
+                    coinTypeTally[i]++;
+                    break;
+                }
+            }
+        }
+
+        for(int i = 0; i < coinTypeTally.Length; i++)
+        {
+            Debug.Log("coinTypeTally index " + i + ": " + coinTypeTally[i]);
+            Debug.Log("_bonusMultiplier value: " + _bonusMultiplier[coinTypeTally[i]]);
+            score += (100 * _coinTypes[i].CoinValue * _bonusMultiplier[coinTypeTally[i]] / 100);
+        }
+
+        return score;
      }
 }

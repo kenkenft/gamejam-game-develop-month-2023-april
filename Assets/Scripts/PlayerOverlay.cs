@@ -12,7 +12,7 @@ public class PlayerOverlay : MonoBehaviour
     void Start()
     {
         SetUp();
-        StartTimer(40);
+        StartTimer(0);
     }
     
     public void SetUp()
@@ -43,6 +43,11 @@ public class PlayerOverlay : MonoBehaviour
     public void StartTimer(int startTime)
     {
         StartCoroutine(timer.Countdown(startTime));
+    }
+
+    public void UpdateScoreText(int points)
+    {
+        scoreTextProperties.UpdateScore(points);
     }
 
 }

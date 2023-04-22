@@ -11,7 +11,7 @@ public class CoinSpawner : MonoBehaviour
     private List<GameObject> _pooledObjsList = new List<GameObject>();
 
     private Vector3 _spawnTargetPos = new Vector3(0f, 0f, 0f);
-    public CoinScriptable[] CoinTypes;
+    private List<CoinScriptable> _coinTypes = new List<CoinScriptable>();
 
     private int _tempInt;
 
@@ -27,9 +27,10 @@ public class CoinSpawner : MonoBehaviour
 
     void Start()
     {
-        InstantiateCoinPrefabPool(3);
-    //     for(int i = 0; i < 100; i ++)
-    //         SpawnCoinOnField();
+         _coinTypes.AddRange(GameProperties.GetCoinScriptables());
+        InstantiateCoinPrefabPool(30);
+        for(int i = 0; i < 30; i ++)
+            SpawnCoinOnField();
     }
 
     public void InstantiateCoinPrefabPool(int expectedUpperLimit)
@@ -98,12 +99,12 @@ public class CoinSpawner : MonoBehaviour
         _tempInt =  Random.Range(0,100);
 
         if(_tempInt > 95)
-            return CoinTypes[CoinTypes.Length-1];
+            return _coinTypes[_coinTypes.Count-1];
         else if (_tempInt <= 95 && _tempInt > 85)
-            return CoinTypes[2];
+            return _coinTypes[2];
         else if (_tempInt <= 85 && _tempInt > 60)
-            return CoinTypes[1];
+            return _coinTypes[1];
         else
-            return CoinTypes[0];
+            return _coinTypes[0];
     } 
 }

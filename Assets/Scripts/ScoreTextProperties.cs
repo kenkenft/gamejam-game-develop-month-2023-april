@@ -8,15 +8,25 @@ public class ScoreTextProperties : MonoBehaviour
 {
     int currentScore = 0;
     Text scoreText;
+
+    void OnEnable()
+    {
+        PlayerStorage.DepositCoin += UpdateScore;
+    }
+
+    void OnDisable()
+    {
+        PlayerStorage.DepositCoin -= UpdateScore;
+    }
     void Start()
     {
         scoreText = GetComponentInChildren<Text>();
         scoreText.text = "Score: " + currentScore;
     }
 
-    public void UpdateScore(int truckScore)
+    public void UpdateScore(int points)
     {
-        currentScore += truckScore;
+        currentScore += points;
         scoreText.text = "Score: " + currentScore;
     }
 
