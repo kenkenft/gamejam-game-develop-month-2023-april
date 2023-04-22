@@ -46,9 +46,9 @@
      <Compile Include="Assets\Scripts\CoinScriptable.cs" />
      <Compile Include="Assets\Scripts\ScoreTextProperties.cs" />
      <Compile Include="Assets\Scripts\PlayerStorage.cs" />
+     <Compile Include="Assets\Scripts\CoinSpawner.cs" />
      <Compile Include="Assets\Scripts\AudioManager.cs" />
      <Compile Include="Assets\Scripts\PlayerControl.cs" />
-     <Compile Include="Assets\Scripts\CoinSpawner.cs" />
     <Reference Include="UnityEngine">
         <HintPath>C:\Program Files\Unity\Hub\Editor\2021.3.16f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
     </Reference>

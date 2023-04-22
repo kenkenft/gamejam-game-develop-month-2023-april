@@ -76,7 +76,7 @@ public class CoinSpawner : MonoBehaviour
     {
         if(ValidSpawnArea[1].transform.position.x < _spawnTargetPos[0] && _spawnTargetPos[0] < ValidSpawnArea[2].transform.position.x)
         {
-            while(ValidSpawnArea[1].transform.position.y < _spawnTargetPos[1] && _spawnTargetPos[1] < ValidSpawnArea[2].transform.position.y)
+            while(ValidSpawnArea[2].transform.position.y < _spawnTargetPos[1] && _spawnTargetPos[1] < ValidSpawnArea[1].transform.position.y)
                 _spawnTargetPos[1] = Random.Range(ValidSpawnArea[0].transform.position.y, ValidSpawnArea[3].transform.position.y);
         }
     }       
