@@ -12,7 +12,7 @@ public class PlayerOverlay : MonoBehaviour
     void Start()
     {
         SetUp();
-        StartTimer(15);
+        StartTimer(40);
     }
     
     public void SetUp()

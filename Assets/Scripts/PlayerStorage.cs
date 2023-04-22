@@ -30,6 +30,8 @@ public class PlayerStorage : MonoBehaviour
         CheckColliderTag(col.gameObject.tag);
         if(_isCoinCollided && (_coinCapacityUsed < _coinCapacityMax) )
             PickUpCoin(col.gameObject.GetComponent<CoinBehaviour>());
+        else
+            PlaySFX?.Invoke("fail");
     } 
 
     void OnTriggerExit2D(Collider2D col)
@@ -45,7 +47,6 @@ public class PlayerStorage : MonoBehaviour
             {  
                 _isCoinCollided = !_isCoinCollided;
                 Debug.Log("Coin case: " + _isCoinCollided);
-                PlaySFX?.Invoke("coinPickup");
                 break;
             }
             case "Pool":
@@ -66,6 +67,7 @@ public class PlayerStorage : MonoBehaviour
         _coinCapacityUsed += 1;
         _coinsCollected.Add(coin);
         coin.gameObject.SetActive(false);
+        PlaySFX?.Invoke("coinPickup");
     }
 
      bool GetCanDeposit()
@@ -85,6 +87,7 @@ public class PlayerStorage : MonoBehaviour
                 DepositCoin?.Invoke(_coinsCollected[index]);
                 _coinsCollected.RemoveAt(index);
             }
+            _coinCapacityUsed = 0;
             PlaySFX?.Invoke("deposit");
         }
         else

@@ -8,9 +8,14 @@ public class Timer : MonoBehaviour
     int timeLeft = 9;
     Text timerText;
     // GameManager gameManager;
-    WaitForSecondsRealtime timerDelay = new WaitForSecondsRealtime(0.9f);
+    WaitForSecondsRealtime timerDelay = new WaitForSecondsRealtime(0.5f);
     WaitForSecondsRealtime addTimerDelay = new WaitForSecondsRealtime(0.4f);
     Color defaultColor = Color.white, addColor = Color.green, currColor;
+
+    [HideInInspector] public delegate void OnTimeHasPassed();
+    [HideInInspector] public static OnTimeHasPassed SpawnNewCoin;
+
+
     void Start()
     {
         timerText = GetComponentInChildren<Text>();
@@ -27,15 +32,23 @@ public class Timer : MonoBehaviour
             yield return timerDelay;
             timeLeft--;
             timerText.text = "Time: " + timeLeft;
+            TimeToSpawnNewCoin();
         }
         StopCoroutine("Countdown");
         // gameManager.TriggerEndgame();
+        Debug.Log("Game OVER!");
         yield return null;
     }
 
     IEnumerator WaitAddTimer()
     {
         yield return addTimerDelay;
+    }
+
+    void TimeToSpawnNewCoin()
+    {
+        if(timeLeft % 3 == 0)
+            SpawnNewCoin?.Invoke();
     }
 
 }

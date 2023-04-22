@@ -15,11 +15,21 @@ public class CoinSpawner : MonoBehaviour
 
     private int _tempInt;
 
+    void OnEnable()
+    {
+        Timer.SpawnNewCoin += SpawnCoinOnField;
+    }
+
+    void OnDisable()
+    {
+        Timer.SpawnNewCoin -= SpawnCoinOnField;
+    }
+
     void Start()
     {
-        InstantiateCoinPrefabPool(100);
-        for(int i = 0; i < 100; i ++)
-            SpawnCoinOnField();
+        InstantiateCoinPrefabPool(3);
+    //     for(int i = 0; i < 100; i ++)
+    //         SpawnCoinOnField();
     }
 
     public void InstantiateCoinPrefabPool(int expectedUpperLimit)
