@@ -91,12 +91,12 @@ public class PlayerStorage : MonoBehaviour
         int index = 0;
         if(_coinsCollected.Count > 0)
         {    
+            DepositCoin?.Invoke(CalcCoinScore());
             for(int i = _coinsCollected.Count; i > 0 ; i--)
             {
                 index = i-1;
                 Debug.Log("Coin no.: " + i + ". Coin value: " + _coinsCollected[index].Value);
-                // DepositCoin?.Invoke(_coinsCollected[index]);
-                DepositCoin?.Invoke(CalcCoinScore());
+                // DepositCoin?.Invoke(_coinsCollected[index]);     
                 _coinsCollected.RemoveAt(index);
             }
             _coinCapacityUsed = 0;
@@ -130,7 +130,7 @@ public class PlayerStorage : MonoBehaviour
         {
             Debug.Log("coinTypeTally index " + i + ": " + coinTypeTally[i]);
             Debug.Log("_bonusMultiplier value: " + _bonusMultiplier[coinTypeTally[i]]);
-            score += (100 * _coinTypes[i].CoinValue * _bonusMultiplier[coinTypeTally[i]] / 100);
+            score += (100 * _coinTypes[i].CoinValue * coinTypeTally[i] * _bonusMultiplier[coinTypeTally[i]] / 100);
         }
 
         return score;
