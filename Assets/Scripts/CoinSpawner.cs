@@ -13,10 +13,12 @@ public class CoinSpawner : MonoBehaviour
     private Vector3 _spawnTargetPos = new Vector3(0f, 0f, 0f);
     public CoinScriptable[] CoinTypes;
 
+    private int _tempInt;
+
     void Start()
     {
-        InstantiateCoinPrefabPool(50);
-        for(int i = 0; i < 50; i ++)
+        InstantiateCoinPrefabPool(100);
+        for(int i = 0; i < 100; i ++)
             SpawnCoinOnField();
     }
 
@@ -58,13 +60,13 @@ public class CoinSpawner : MonoBehaviour
     public void SpawnCoinOnField()
     {
         _tmpObj = GetPooledCoin();
-        _tmpObj.GetComponent<CoinBehaviour>().CoinSO = CoinTypes[0];
+        _tmpObj.GetComponent<CoinBehaviour>().CoinSO = SelectRandomCoinValue();
         _tmpObj.GetComponent<CoinBehaviour>().SetUpCoin();
         SelectValidSpawnCoord();
         EnableCoinComponents(true);
         _tmpObj.transform.position = _spawnTargetPos;
     }
-    public void SelectValidSpawnCoord()
+    private void SelectValidSpawnCoord()
     {
         _spawnTargetPos[0] = Random.Range(ValidSpawnArea[0].transform.position.x, ValidSpawnArea[3].transform.position.x);
         _spawnTargetPos[1] = Random.Range(ValidSpawnArea[0].transform.position.y, ValidSpawnArea[3].transform.position.y);
@@ -72,12 +74,26 @@ public class CoinSpawner : MonoBehaviour
         IsSpawnTargetInCoinHole(); 
     }
 
-    void IsSpawnTargetInCoinHole()
+    private void IsSpawnTargetInCoinHole()
     {
         if(ValidSpawnArea[1].transform.position.x < _spawnTargetPos[0] && _spawnTargetPos[0] < ValidSpawnArea[2].transform.position.x)
         {
             while(ValidSpawnArea[2].transform.position.y < _spawnTargetPos[1] && _spawnTargetPos[1] < ValidSpawnArea[1].transform.position.y)
                 _spawnTargetPos[1] = Random.Range(ValidSpawnArea[0].transform.position.y, ValidSpawnArea[3].transform.position.y);
         }
-    }       
+    }      
+
+    private CoinScriptable SelectRandomCoinValue()
+    {
+        _tempInt =  Random.Range(0,100);
+
+        if(_tempInt > 95)
+            return CoinTypes[CoinTypes.Length-1];
+        else if (_tempInt <= 95 && _tempInt > 85)
+            return CoinTypes[2];
+        else if (_tempInt <= 85 && _tempInt > 60)
+            return CoinTypes[1];
+        else
+            return CoinTypes[0];
+    } 
 }
