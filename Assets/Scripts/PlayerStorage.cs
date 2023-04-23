@@ -13,6 +13,9 @@ public class PlayerStorage : MonoBehaviour
     // [HideInInspector] public delegate void OnDepositCoin(CoinBehaviour coinBehaviour);
     [HideInInspector] public delegate void OnDepositCoin(int intValue);
     [HideInInspector] public static OnDepositCoin DepositCoin;
+
+    [HideInInspector] public delegate void OnPlayerStorageChange(float penaltyAmount);
+    [HideInInspector] public static OnPlayerStorageChange ApplyWeightPenalty;
     [HideInInspector] public delegate void OnPlaySFX(string audioName);
     [HideInInspector] public static OnPlaySFX PlaySFX;
     
@@ -77,6 +80,7 @@ public class PlayerStorage : MonoBehaviour
     {
         _coinCapacityUsed += 1;
         _coinsCollected.Add(coin);
+        ApplyWeightPenalty?.Invoke(-coin.Weight);
         coin.gameObject.SetActive(false);
         PlaySFX?.Invoke("coinPickup");
     }
@@ -96,7 +100,8 @@ public class PlayerStorage : MonoBehaviour
             {
                 index = i-1;
                 Debug.Log("Coin no.: " + i + ". Coin value: " + _coinsCollected[index].Value);
-                // DepositCoin?.Invoke(_coinsCollected[index]);     
+                // DepositCoin?.Invoke(_coinsCollected[index]);    
+                ApplyWeightPenalty?.Invoke(_coinsCollected[index].Weight); 
                 _coinsCollected.RemoveAt(index);
             }
             _coinCapacityUsed = 0;

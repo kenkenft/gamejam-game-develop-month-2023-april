@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerControl : MonoBehaviour
 {
-    [SerializeField] private float _playerSpeed = 10.0f;
+    [SerializeField] private float _playerSpeedBase = 10.0f, _playerSpeed, _playerPenaltyModifier = 0.4f;
     
     private Vector2 _moveXY = new Vector2(0f, 0f);
     public Rigidbody2D PlayerRig;    
@@ -17,6 +17,17 @@ public class PlayerControl : MonoBehaviour
 
     [HideInInspector] public delegate void OnPlaySFX(string audioName);
     [HideInInspector] public static OnPlaySFX PlaySFX;
+    
+    void OnEnable()
+    {
+        PlayerStorage.ApplyWeightPenalty += AddPlayerSpeed;
+        _playerSpeed = _playerSpeedBase;
+    }
+
+    void OnDisable()
+    {
+        PlayerStorage.ApplyWeightPenalty -= AddPlayerSpeed;
+    }
     
     void Update()
     {
@@ -50,6 +61,13 @@ public class PlayerControl : MonoBehaviour
             PlaySFX?.Invoke("fail");
         }
         
+    }
+
+    public void AddPlayerSpeed(float speedModifier)
+    {
+        _playerSpeed += _playerPenaltyModifier * speedModifier;
+        _playerSpeed = Mathf.Clamp(_playerSpeed, 1f, _playerSpeedBase);
+        Debug.Log("PlayerSpeed: " + _playerSpeed);
     }
 
     
