@@ -32,6 +32,7 @@ public class PlayerControl : MonoBehaviour
     public void GameStartSetUp()
     {
         _playerSpeed = _playerSpeedBase;
+        this.gameObject.transform.position = new Vector3(0f,5f,0f);
     }
 
     void Update()

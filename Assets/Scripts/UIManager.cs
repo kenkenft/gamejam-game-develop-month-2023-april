@@ -111,11 +111,11 @@ public class UIManager : MonoBehaviour
         // empty player coinstorage, 
         // empty coin pool,
         // Remove coin prefabrications 
+        // Spawn player in start location
     }
     
     //ToDo invoke sound effects on button press
     //ToDo method to Toggle active state of buttons <-- Might be redundant
-    //ToDo method to start game and SetUp initial game state
     //ToDo method to show results menu on timer expiring
     //ToDo method to return player back to menu and clear player data
     //ToDo method to enable and disable pause ui
