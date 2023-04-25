@@ -11,6 +11,9 @@ public class UIManager : MonoBehaviour
     [SerializeField] private GameObject[] _instructionTextArray;
     private int _textIndexPointer = 0; 
 
+    [HideInInspector] public delegate void OnPlaySFX(string audioName);
+    [HideInInspector] public static OnPlaySFX PlaySFX;
+
     void OnEnable()
     {
         
@@ -95,6 +98,7 @@ public class UIManager : MonoBehaviour
             else
                 _instructionTextArray[i].SetActive(false);
         }
+        PlaySFX?.Invoke("coinPickup");
     }
     
     //ToDo invoke sound effects on button press

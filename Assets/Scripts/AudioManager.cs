@@ -14,12 +14,14 @@ public class AudioManager : MonoBehaviour
     {
         PlayerControl.PlaySFX +=  PlaySound;
         PlayerStorage.PlaySFX += PlaySound;
+        UIManager.PlaySFX += PlaySound;
     }
 
     void OnDisable()
     {
         PlayerControl.PlaySFX -=  PlaySound;
         PlayerStorage.PlaySFX -= PlaySound;
+        UIManager.PlaySFX -= PlaySound;
     }
 
     void Awake()
