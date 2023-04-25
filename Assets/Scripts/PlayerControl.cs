@@ -7,13 +7,14 @@ public class PlayerControl : MonoBehaviour
     [SerializeField] private float _playerSpeedBase = 10.0f, _playerSpeed, _playerPenaltyModifier = 0.4f;
     
     private Vector2 _moveXY = new Vector2(0f, 0f);
-    public Rigidbody2D PlayerRig;    
+    public Rigidbody2D PlayerRig;
 
     [HideInInspector] public delegate bool OnInteractKeyDown();
     [HideInInspector] public static OnInteractKeyDown CheckCanDeposit;
 
-    [HideInInspector] public delegate void OnCanDepositTrue();
-    [HideInInspector] public static OnCanDepositTrue CallDepositCoins;
+    [HideInInspector] public delegate void OnSomeEvent();
+    [HideInInspector] public static OnSomeEvent CallDepositCoins;
+    [HideInInspector] public static OnSomeEvent TogglePauseUI;
 
     [HideInInspector] public delegate void OnPlaySFX(string audioName);
     [HideInInspector] public static OnPlaySFX PlaySFX;
@@ -40,6 +41,9 @@ public class PlayerControl : MonoBehaviour
         Move();
         if(Input.GetKeyDown(KeyCode.E))
             CheckInteractContext();
+
+        if(Input.GetKeyDown(KeyCode.P))
+            TogglePauseUI?.Invoke();
     }
 
     private void Move()

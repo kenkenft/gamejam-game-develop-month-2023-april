@@ -8,6 +8,8 @@ public class UIManager : MonoBehaviour
     private Canvas _playerOverlayCanvas, _titleCanvas, _pauseCanvas, _resultsCanvas;
     private List<Canvas> _canvasList = new List<Canvas>();
 
+    bool _isPlaying = false, _isPaused = false;
+
     [SerializeField] private GameObject[] _instructionTextArray;
     private int _textIndexPointer = 0; 
 
@@ -16,7 +18,11 @@ public class UIManager : MonoBehaviour
 
     void OnEnable()
     {
-        
+        PlayerControl.TogglePauseUI += PauseGame;
+    }
+    void Disable()
+    {
+        PlayerControl.TogglePauseUI -= PauseGame;
     }
 
     void Start()
@@ -105,6 +111,8 @@ public class UIManager : MonoBehaviour
     {
         Debug.Log("Play button pressed!");
         ToggleCanvas("PlayerOverlayCanvas");
+        _isPlaying = true;
+        _isPaused = false;
         // Reset player score to zero, 
         // reset play speed to base default, 
         // set and start timer, 
@@ -112,6 +120,25 @@ public class UIManager : MonoBehaviour
         // empty coin pool,
         // Remove coin prefabrications 
         // Spawn player in start location
+    }
+
+    public void PauseGame()
+    {
+        if(_isPlaying)
+        {    
+            if(!_isPaused)
+            {    
+                _pauseCanvas.gameObject.SetActive(true);
+                Time.timeScale = 0;
+                _isPaused = true;
+            }
+            else
+            {
+                _pauseCanvas.gameObject.SetActive(false);
+                Time.timeScale = 1;
+                _isPaused = false;
+            }
+        }
     }
     
     //ToDo invoke sound effects on button press
