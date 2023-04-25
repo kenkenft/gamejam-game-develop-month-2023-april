@@ -21,19 +21,19 @@ public class ScoreTextProperties : MonoBehaviour
     void Start()
     {
         scoreText = GetComponentInChildren<Text>();
-        scoreText.text = "Score: " + currentScore;
+        scoreText.text = "Money: " + currentScore;
     }
 
     public void UpdateScore(int points)
     {
         currentScore += points;
-        scoreText.text = "Score: " + currentScore;
+        scoreText.text = "Money: " + currentScore;
     }
 
     public void ResetScore()
     {
         currentScore = 0;
-        scoreText.text = "Score: " + currentScore;
+        scoreText.text = "Money: " + currentScore;
     }
 
     public int GetCurrentScore()

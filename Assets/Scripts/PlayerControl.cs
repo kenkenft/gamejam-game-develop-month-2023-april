@@ -29,6 +29,11 @@ public class PlayerControl : MonoBehaviour
         PlayerStorage.ApplyWeightPenalty -= AddPlayerSpeed;
     }
     
+    public void GameStartSetUp()
+    {
+        _playerSpeed = _playerSpeedBase;
+    }
+
     void Update()
     {
         Move();

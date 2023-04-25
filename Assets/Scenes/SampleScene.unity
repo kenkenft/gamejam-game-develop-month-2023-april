@@ -256,6 +256,17 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 28
   m_TargetDisplay: 0
+--- !u!114 &67533854 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 150576499322046894, guid: 7d093420faf8b264dac3899f57923f6d, type: 3}
+  m_PrefabInstance: {fileID: 4007923476168059507}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c82525fb6f4812943b8bcfec083ef960, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &95709621
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -404,7 +415,67 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 98480103}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2066347917}
+        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+        m_MethodName: PlayGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 882156279843362176}
+        m_TargetAssemblyTypeName: PlayerControl, Assembly-CSharp
+        m_MethodName: GameStartSetUp
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 882156279843362175}
+        m_TargetAssemblyTypeName: PlayerStorage, Assembly-CSharp
+        m_MethodName: GameStartSetUp
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1399833170}
+        m_TargetAssemblyTypeName: PlayerOverlay, Assembly-CSharp
+        m_MethodName: GameStartSetUp
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 67533854}
+        m_TargetAssemblyTypeName: CoinSpawner, Assembly-CSharp
+        m_MethodName: GameStartSetUp
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &98480103
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1138,7 +1209,7 @@ MonoBehaviour:
     volume: 0.5
     pitch: 1
   - name: coinPickup
-    clip: {fileID: 8300000, guid: cf6c0e7fbef9449c98a0cdb5ea0c4d9f, type: 3}
+    clip: {fileID: 8300000, guid: 29bde6326b4c34ad8a12da475f79b50a, type: 3}
     source: {fileID: 0}
     volume: 0.5
     pitch: 1
@@ -3269,6 +3340,17 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1399833170 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 102978721603350645, guid: b17f21ffa6ecdd54cb20979ae6cfbefd, type: 3}
+  m_PrefabInstance: {fileID: 1989377577}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5420f5e326781e45885407777e46cb9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1502133033
 GameObject:
   m_ObjectHideFlags: 0
@@ -4892,6 +4974,17 @@ MonoBehaviour:
   _coinCapacityMax: 10
   _coinCapacityUsed: 0
   _coinsCollected: []
+--- !u!114 &882156279843362176 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 882156280097348868, guid: 2a769d07c69e5b14db0980fa040cfbb7, type: 3}
+  m_PrefabInstance: {fileID: 882156279843362173}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 882156279843362174}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9bf17e728bfa1e94d8638c4222159d5b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2862116072809652915
 PrefabInstance:
   m_ObjectHideFlags: 0

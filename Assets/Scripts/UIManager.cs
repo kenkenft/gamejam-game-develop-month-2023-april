@@ -100,6 +100,18 @@ public class UIManager : MonoBehaviour
         }
         PlaySFX?.Invoke("coinPickup");
     }
+
+    public void PlayGame()
+    {
+        Debug.Log("Play button pressed!");
+        ToggleCanvas("PlayerOverlayCanvas");
+        // Reset player score to zero, 
+        // reset play speed to base default, 
+        // set and start timer, 
+        // empty player coinstorage, 
+        // empty coin pool,
+        // Remove coin prefabrications 
+    }
     
     //ToDo invoke sound effects on button press
     //ToDo method to Toggle active state of buttons <-- Might be redundant

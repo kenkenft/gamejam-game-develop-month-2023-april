@@ -12,7 +12,7 @@ public class PlayerOverlay : MonoBehaviour
     void Start()
     {
         SetUp();
-        StartTimer(0);
+        // StartTimer(0);
     }
     
     public void SetUp()
@@ -21,6 +21,12 @@ public class PlayerOverlay : MonoBehaviour
         
         scoreTextProperties = GetComponentInChildren<ScoreTextProperties>();
         timer = GetComponentInChildren<Timer>();
+    }
+
+    public void GameStartSetUp()
+    {
+        StartTimer(60);
+        ResetOverlay();
     }
 
     public void ResetOverlay()

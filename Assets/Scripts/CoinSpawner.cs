@@ -25,11 +25,15 @@ public class CoinSpawner : MonoBehaviour
         Timer.SpawnNewCoin -= SpawnCoinOnField;
     }
 
-    void Start()
+    public void GameStartSetUp()
     {
+         _coinTypes.Clear();
          _coinTypes.AddRange(GameProperties.GetCoinScriptables());
-        InstantiateCoinPrefabPool(30);
-        for(int i = 0; i < 30; i ++)
+        if(_pooledObjsList.Count < 1)
+            InstantiateCoinPrefabPool(50);
+        else
+            ClearField();
+        for(int i = 0; i < 4; i ++)
             SpawnCoinOnField();
     }
 
@@ -46,6 +50,7 @@ public class CoinSpawner : MonoBehaviour
         _tmpObj = Instantiate(CoinPrefab);
         _tmpObj.name = "Coin Prefab " + _pooledObjsList.Count;
         _tmpObj.transform.parent = transform;
+        EnableCoinComponents(isActive);
         _pooledObjsList.Add(_tmpObj);
     }
 
@@ -107,4 +112,13 @@ public class CoinSpawner : MonoBehaviour
         else
             return _coinTypes[0];
     } 
+
+    private void ClearField()
+    {
+        foreach(GameObject coin in _pooledObjsList)
+        {
+            _tmpObj = coin;
+            EnableCoinComponents(false);
+        }
+    }
 }

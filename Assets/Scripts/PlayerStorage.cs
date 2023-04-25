@@ -34,11 +34,17 @@ public class PlayerStorage : MonoBehaviour
 
     void Start()
     {
-        Debug.Log("_coinTypes:" + _coinTypes.Count);
         _coinTypes.AddRange(GameProperties.GetCoinScriptables());
-        Debug.Log("_coinTypes:" + _coinTypes.Count);
     }
     
+    public void GameStartSetUp()
+    {
+        _coinCapacityUsed = 0;
+        _coinsCollected.Clear();
+        _isCoinCollided = false; 
+        _canDeposit = false;
+    }
+
     void OnTriggerEnter2D(Collider2D col)
     {
         CheckColliderTag(col.gameObject.tag);
