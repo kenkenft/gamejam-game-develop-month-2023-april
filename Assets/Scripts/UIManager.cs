@@ -8,9 +8,8 @@ public class UIManager : MonoBehaviour
     private Canvas _playerOverlayCanvas, _titleCanvas, _pauseCanvas, _resultsCanvas;
     private List<Canvas> _canvasList = new List<Canvas>();
 
-    private GameObject _creditsMenu, _instructionsMenu;
-
-    private bool _isCreditMenuEnabled = false;
+    [SerializeField] private GameObject[] _instructionTextArray;
+    private int _textIndexPointer = 0; 
 
     void OnEnable()
     {
@@ -19,11 +18,9 @@ public class UIManager : MonoBehaviour
 
     void Start()
     {
-        SetCanvasRefs();    
-
-        SetTitleGameObjectRefs();
+        SetCanvasRefs();            
         ToggleCanvas("TitleCanvas");
-        SwitchMainTitleScreen();
+        AdvanceInstructionText();
     }
 
     void SetCanvasRefs()
@@ -78,46 +75,29 @@ public class UIManager : MonoBehaviour
             else
                 canvas.gameObject.SetActive(false);
         }
-
     }
 
-    void SetTitleGameObjectRefs()
+    public void AdvanceInstructionText()
     {
-        Transform[] tempArray = _titleCanvas.gameObject.GetComponentsInChildren<Transform>();
-        Debug.Log("tempArray.Length: " + tempArray.Length);
-        foreach(Transform transform in tempArray)
+        if(_textIndexPointer >= _instructionTextArray.Length-1)
+            _textIndexPointer = 0;
+        else
+            _textIndexPointer++;
+        EnableInstructionText(_textIndexPointer);
+    }
+
+    void EnableInstructionText(int targetTextNum)
+    {
+        for(int i = 0; i < _instructionTextArray.Length; i++)
         {
-            switch(transform.gameObject.name)
-            {
-                case "CreditsMenu":
-                {
-                    _creditsMenu = transform.gameObject;
-                    Debug.Log("CreditsMenu found! " + _creditsMenu.name);
-                    break;
-                }
-                case "InstructionMenu":
-                {
-                    _instructionsMenu = transform.gameObject;
-                    Debug.Log("InstructionMenu found! " + _instructionsMenu.name);
-                    break;
-                }
-                default:
-                    break;
-            }
+            if(i == targetTextNum)
+                _instructionTextArray[i].SetActive(true);
+            else
+                _instructionTextArray[i].SetActive(false);
         }
-
-    }
-    public void SwitchMainTitleScreen()
-    {
-        // Inverts the active status for appropriate ui elements to switch between the credits text and instruction text on the title ui
-        _creditsMenu.SetActive(!_isCreditMenuEnabled);
-        _instructionsMenu.SetActive(_isCreditMenuEnabled);
-
-        _isCreditMenuEnabled = !_isCreditMenuEnabled;
-        
     }
     
-    //ToDo separate instruction text into two sections
+    //ToDo invoke sound effects on button press
     //ToDo method to Toggle active state of buttons <-- Might be redundant
     //ToDo method to start game and SetUp initial game state
     //ToDo method to show results menu on timer expiring
