@@ -8,6 +8,10 @@ public class UIManager : MonoBehaviour
     private Canvas _playerOverlayCanvas, _titleCanvas, _pauseCanvas, _resultsCanvas;
     private List<Canvas> _canvasList = new List<Canvas>();
 
+    private GameObject _creditsMenu, _instructionsMenu;
+
+    private bool _isCreditMenuEnabled = false;
+
     void OnEnable()
     {
         
@@ -15,52 +19,51 @@ public class UIManager : MonoBehaviour
 
     void Start()
     {
+        SetCanvasRefs();    
+
+        SetTitleGameObjectRefs();
+        ToggleCanvas("TitleCanvas");
+        SwitchMainTitleScreen();
+    }
+
+    void SetCanvasRefs()
+    {
         Canvas[] tempCanvasArray = GetComponentsInChildren<Canvas>();
         foreach(Canvas canvas in tempCanvasArray)
         {
-            CheckWhichCanvas(canvas);    
-        }
-
-        // Debug.Log(_canvasesDict.Count + "," + _canvasesDict["TitleCanvas"]);
-        Debug.Log(_canvasList.Count);
-
-        ToggleCanvas("ResultsCanvas");
-    }
-
-    void CheckWhichCanvas(Canvas canvas)
-    {
-        switch(canvas.gameObject.name)
-        {
-            case "PlayerOverlayCanvas":
+            switch(canvas.gameObject.name)
             {
-                // _canvasesDict.Add("playerOverlayCanvas", canvas);
-                _playerOverlayCanvas = canvas;
-                _canvasList.Add(_playerOverlayCanvas);
-                break;
+                case "PlayerOverlayCanvas":
+                {
+                    // _canvasesDict.Add("playerOverlayCanvas", canvas);
+                    _playerOverlayCanvas = canvas;
+                    _canvasList.Add(_playerOverlayCanvas);
+                    break;
+                }
+                case "TitleCanvas":
+                {
+                    // _canvasesDict.Add("titleCanvas", canvas);
+                    _titleCanvas = canvas;
+                    _canvasList.Add(_titleCanvas);
+                    break;
+                }
+                case "PauseCanvas":
+                {
+                    // _canvasesDict.Add("pauseCanvas", canvas);
+                    _pauseCanvas = canvas;
+                    _canvasList.Add(_pauseCanvas);
+                    break;
+                }
+                case "ResultsCanvas":
+                {
+                    // _canvasesDict.Add("resultsCanvas", canvas);
+                    _resultsCanvas = canvas;
+                    _canvasList.Add(_resultsCanvas);
+                    break;
+                }
+                default:
+                    break;
             }
-            case "TitleCanvas":
-            {
-                // _canvasesDict.Add("titleCanvas", canvas);
-                _titleCanvas = canvas;
-                _canvasList.Add(_titleCanvas);
-                break;
-            }
-            case "PauseCanvas":
-            {
-                // _canvasesDict.Add("pauseCanvas", canvas);
-                _pauseCanvas = canvas;
-                _canvasList.Add(_pauseCanvas);
-                break;
-            }
-            case "ResultsCanvas":
-            {
-                // _canvasesDict.Add("resultsCanvas", canvas);
-                _resultsCanvas = canvas;
-                _canvasList.Add(_resultsCanvas);
-                break;
-            }
-            default:
-                break;
         }
     }
     
@@ -77,13 +80,49 @@ public class UIManager : MonoBehaviour
         }
 
     }
-    //ToDo method to Toggle active state of canvas
-    //ToDo method to Toggle active state of buttons
+
+    void SetTitleGameObjectRefs()
+    {
+        Transform[] tempArray = _titleCanvas.gameObject.GetComponentsInChildren<Transform>();
+        Debug.Log("tempArray.Length: " + tempArray.Length);
+        foreach(Transform transform in tempArray)
+        {
+            switch(transform.gameObject.name)
+            {
+                case "CreditsMenu":
+                {
+                    _creditsMenu = transform.gameObject;
+                    Debug.Log("CreditsMenu found! " + _creditsMenu.name);
+                    break;
+                }
+                case "InstructionMenu":
+                {
+                    _instructionsMenu = transform.gameObject;
+                    Debug.Log("InstructionMenu found! " + _instructionsMenu.name);
+                    break;
+                }
+                default:
+                    break;
+            }
+        }
+
+    }
+    public void SwitchMainTitleScreen()
+    {
+        // Inverts the active status for appropriate ui elements to switch between the credits text and instruction text on the title ui
+        _creditsMenu.SetActive(!_isCreditMenuEnabled);
+        _instructionsMenu.SetActive(_isCreditMenuEnabled);
+
+        _isCreditMenuEnabled = !_isCreditMenuEnabled;
+        
+    }
+    
+    //ToDo separate instruction text into two sections
+    //ToDo method to Toggle active state of buttons <-- Might be redundant
     //ToDo method to start game and SetUp initial game state
-    //ToDo method to show instruction text
-    //ToDo method to show credit text
     //ToDo method to show results menu on timer expiring
     //ToDo method to return player back to menu and clear player data
-    //ToDo method to detect pause button press
+    //ToDo method to enable and disable pause ui
+    //ToDo method that invokes enable/disable pause ui from PlayerControl
 
 }
