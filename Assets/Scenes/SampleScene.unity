@@ -580,7 +580,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &164290516
 Transform:
   m_ObjectHideFlags: 0
@@ -4371,7 +4371,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1811428750
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4882,7 +4882,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 102978721603350648, guid: b17f21ffa6ecdd54cb20979ae6cfbefd, type: 3}
       propertyPath: m_Name
-      value: PlayerOverlay
+      value: PlayerOverlayCanvas
       objectReference: {fileID: 0}
     - target: {fileID: 102978721603350649, guid: b17f21ffa6ecdd54cb20979ae6cfbefd, type: 3}
       propertyPath: m_Pivot.x
