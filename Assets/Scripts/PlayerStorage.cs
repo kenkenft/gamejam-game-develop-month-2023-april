@@ -7,7 +7,7 @@ public class PlayerStorage : MonoBehaviour
     [SerializeField] private int _coinCapacityMax = 10, _coinCapacityUsed = 0;
     private int[] _bonusMultiplier = {0, 100, 103, 106, 109, 115, 124, 139, 163, 202, 265};
     [SerializeField] private List<CoinBehaviour>  _coinsCollected = new List<CoinBehaviour>(){};
-    private bool _isCoinCollided = false, _canDeposit = false;
+    [SerializeField] private bool _isCoinCollided = false, _canDeposit = false;
     private List<CoinScriptable> _coinTypes = new List<CoinScriptable>();
 
     // [HideInInspector] public delegate void OnDepositCoin(CoinBehaviour coinBehaviour);
@@ -24,12 +24,14 @@ public class PlayerStorage : MonoBehaviour
     {
         PlayerControl.CheckCanDeposit += GetCanDeposit;
         PlayerControl.CallDepositCoins += DepositCoins;
+        PlayerControl.SetPlayerStorage += GameStartSetUp;
     }
 
     void OnDisable()
     {
         PlayerControl.CheckCanDeposit -= GetCanDeposit;
         PlayerControl.CallDepositCoins -= DepositCoins;
+        PlayerControl.SetPlayerStorage -= GameStartSetUp;
     }
 
     void Start()
@@ -41,8 +43,8 @@ public class PlayerStorage : MonoBehaviour
     {
         _coinCapacityUsed = 0;
         _coinsCollected.Clear();
-        _isCoinCollided = false; 
-        _canDeposit = false;
+        _isCoinCollided = _isCoinCollided ? false : _isCoinCollided; 
+        _canDeposit = _canDeposit ? false : false;
     }
 
     void OnTriggerEnter2D(Collider2D col)
@@ -146,4 +148,5 @@ public class PlayerStorage : MonoBehaviour
 
         return score;
      }
+
 }

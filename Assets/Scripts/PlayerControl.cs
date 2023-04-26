@@ -11,10 +11,12 @@ public class PlayerControl : MonoBehaviour
 
     [HideInInspector] public delegate bool OnInteractKeyDown();
     [HideInInspector] public static OnInteractKeyDown CheckCanDeposit;
+    [HideInInspector] public static OnInteractKeyDown CheckIsPlaying;
 
     [HideInInspector] public delegate void OnSomeEvent();
     [HideInInspector] public static OnSomeEvent CallDepositCoins;
     [HideInInspector] public static OnSomeEvent TogglePauseUI;
+    [HideInInspector] public static OnSomeEvent SetPlayerStorage;
 
     [HideInInspector] public delegate void OnPlaySFX(string audioName);
     [HideInInspector] public static OnPlaySFX PlaySFX;
@@ -34,16 +36,20 @@ public class PlayerControl : MonoBehaviour
     {
         _playerSpeed = _playerSpeedBase;
         this.gameObject.transform.position = new Vector3(0f,5f,0f);
+        SetPlayerStorage?.Invoke();
     }
 
     void Update()
     {
-        Move();
-        if(Input.GetKeyDown(KeyCode.E))
-            CheckInteractContext();
+        if(CheckIsPlaying.Invoke())
+        {
+            Move();
+            if(Input.GetKeyDown(KeyCode.E))
+                CheckInteractContext();
 
-        if(Input.GetKeyDown(KeyCode.P))
-            TogglePauseUI?.Invoke();
+            if(Input.GetKeyDown(KeyCode.P))
+                TogglePauseUI?.Invoke();
+        }
     }
 
     private void Move()

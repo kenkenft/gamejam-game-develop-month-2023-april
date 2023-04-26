@@ -25,12 +25,14 @@ public class UIManager : MonoBehaviour
     void OnEnable()
     {
         PlayerControl.TogglePauseUI += PauseGame;
+        PlayerControl.CheckIsPlaying += GetIsPlaying;
         Timer.CheckIsPaused += GetIsPaused;
         Timer.TriggerEndGame += TriggerEndGame;
     }
     void Disable()
     {
         PlayerControl.TogglePauseUI -= PauseGame;
+        PlayerControl.CheckIsPlaying += GetIsPlaying;
         Timer.CheckIsPaused -= GetIsPaused;
         Timer.TriggerEndGame -= TriggerEndGame;
     }
@@ -133,9 +135,7 @@ public class UIManager : MonoBehaviour
     }
 
     public void PauseGame()
-    {
-        if(_isPlaying)
-        {    
+    { 
             if(!_isPaused)
             {    
                 _pauseCanvas.gameObject.SetActive(true);
@@ -148,28 +148,31 @@ public class UIManager : MonoBehaviour
                 Time.timeScale = 1;
                 _isPaused = false;
             }
-        }
     }
 
     public bool GetIsPaused()
     {
         return _isPaused;
     }
+
+    public bool GetIsPlaying()
+    {
+        return _isPlaying;
+    }
     
     //ToDo invoke sound effects on button press
     //ToDo method to Toggle active state of buttons <-- Might be redundant
-    //ToDo method to show results menu on timer expiring
-    //ToDo method to return player back to menu and clear player data
+    //ToDo method to return player back to menu
 
     public void TriggerEndGame()
     {
-        Debug.Log("TriggerEndGamecalled: Game Over!");
-        Debug.Log("_resultsUITextArray.Length: " + _resultsUITextArray.Length);
         string tempString = GetFinalScore?.Invoke().ToString(); 
         ToggleCanvas("ResultsCanvas");
+        _isPlaying = false;
         
-        Debug.Log("Money: " + tempString);
         _resultsUITextArray[0].text = tempString;
+
+        //ToDo Set endscreen graphics based on score.
     }
 
 }
