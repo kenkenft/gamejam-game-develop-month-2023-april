@@ -19,10 +19,12 @@ public class UIManager : MonoBehaviour
     void OnEnable()
     {
         PlayerControl.TogglePauseUI += PauseGame;
+        Timer.CheckIsPaused += GetIsPaused;
     }
     void Disable()
     {
         PlayerControl.TogglePauseUI -= PauseGame;
+        Timer.CheckIsPaused -= GetIsPaused;
     }
 
     void Start()
@@ -139,6 +141,11 @@ public class UIManager : MonoBehaviour
                 _isPaused = false;
             }
         }
+    }
+
+    public bool GetIsPaused()
+    {
+        return _isPaused;
     }
     
     //ToDo invoke sound effects on button press
