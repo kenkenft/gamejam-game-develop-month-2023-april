@@ -49,7 +49,7 @@ public class PlayerStorage : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D col)
     {
-        CheckColliderTag(col.gameObject.tag);
+        CheckColliderTag(col.gameObject.tag, true);
         if(_isCoinCollided && (_coinCapacityUsed < _coinCapacityMax) )
             PickUpCoin(col.gameObject.GetComponent<CoinBehaviour>());
         else
@@ -58,29 +58,27 @@ public class PlayerStorage : MonoBehaviour
 
     void OnTriggerExit2D(Collider2D col)
     {
-        CheckColliderTag(col.gameObject.tag);
+        CheckColliderTag(col.gameObject.tag, false);
     }
 
-    void CheckColliderTag(string tag)
+    void CheckColliderTag(string tag, bool state)
     {
         switch(tag)
         {
             case "Coin":
             {  
-                _isCoinCollided = !_isCoinCollided;
+                _isCoinCollided = state;
                 Debug.Log("Coin case: " + _isCoinCollided);
                 break;
             }
             case "Pool":
             {
-                _canDeposit = !_canDeposit;
+                _canDeposit = state;
                 Debug.Log("Pool case: " + _canDeposit);
                 break;
             }
             default:
-            {
                 break;
-            }
         }
     }
 
