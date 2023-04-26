@@ -951,7 +951,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 487680534}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2066347917}
+        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+        m_MethodName: TriggerTitleCanvas
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &487680534
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2674,7 +2686,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 988308374}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2066347917}
+        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+        m_MethodName: TriggerTitleCanvas
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &988308374
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5054,6 +5078,8 @@ MonoBehaviour:
   _coinCapacityMax: 10
   _coinCapacityUsed: 0
   _coinsCollected: []
+  _isCoinCollided: 0
+  _canDeposit: 0
 --- !u!114 &882156279843362176 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 882156280097348868, guid: 2a769d07c69e5b14db0980fa040cfbb7, type: 3}

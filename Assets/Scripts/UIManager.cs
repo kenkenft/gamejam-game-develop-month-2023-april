@@ -40,8 +40,7 @@ public class UIManager : MonoBehaviour
     void Start()
     {
         SetCanvasRefs();            
-        ToggleCanvas("TitleCanvas");
-        AdvanceInstructionText();
+        TriggerTitleCanvas();
     }
 
     void SetCanvasRefs()
@@ -125,6 +124,7 @@ public class UIManager : MonoBehaviour
         ToggleCanvas("PlayerOverlayCanvas");
         _isPlaying = true;
         _isPaused = false;
+        PlaySFX?.Invoke("deposit");
         // Reset player score to zero, 
         // reset play speed to base default, 
         // set and start timer, 
@@ -141,12 +141,14 @@ public class UIManager : MonoBehaviour
                 _pauseCanvas.gameObject.SetActive(true);
                 Time.timeScale = 0;
                 _isPaused = true;
+                PlaySFX?.Invoke("coinPickup");
             }
             else
             {
                 _pauseCanvas.gameObject.SetActive(false);
                 Time.timeScale = 1;
                 _isPaused = false;
+                PlaySFX?.Invoke("coinPickup");
             }
     }
 
@@ -160,10 +162,6 @@ public class UIManager : MonoBehaviour
         return _isPlaying;
     }
     
-    //ToDo invoke sound effects on button press
-    //ToDo method to Toggle active state of buttons <-- Might be redundant
-    //ToDo method to return player back to menu
-
     public void TriggerEndGame()
     {
         string tempString = GetFinalScore?.Invoke().ToString(); 
@@ -173,6 +171,17 @@ public class UIManager : MonoBehaviour
         _resultsUITextArray[0].text = tempString;
 
         //ToDo Set endscreen graphics based on score.
+        //ToDo Play Audio based on score
+    }
+
+    public void TriggerTitleCanvas()
+    {
+        ToggleCanvas("TitleCanvas");
+        _isPlaying = true;
+        _isPaused = false;
+        _textIndexPointer = 0;
+        AdvanceInstructionText();
+        PlaySFX?.Invoke("coinPickup");
     }
 
 }
