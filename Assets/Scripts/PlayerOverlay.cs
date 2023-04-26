@@ -25,7 +25,7 @@ public class PlayerOverlay : MonoBehaviour
 
     public void GameStartSetUp()
     {
-        StartTimer(60);
+        StartTimer(20);
         ResetOverlay();
     }
 
@@ -34,26 +34,9 @@ public class PlayerOverlay : MonoBehaviour
         scoreTextProperties.ResetScore();
     }
 
-
-    public int GetFinalScore()
-    {
-        return scoreTextProperties.GetCurrentScore();
-    }
-
-
-    public void TogglePlayerOverlayCanvas(bool state)
-    {
-        playerOverlayCanvas.enabled = state;
-    }
-
     public void StartTimer(int startTime)
     {
         StartCoroutine(timer.Countdown(startTime));
-    }
-
-    public void UpdateScoreText(int points)
-    {
-        scoreTextProperties.UpdateScore(points);
     }
 
 }

@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+
 
 public class UIManager : MonoBehaviour
 {
@@ -12,19 +14,25 @@ public class UIManager : MonoBehaviour
 
     [SerializeField] private GameObject[] _instructionTextArray;
     private int _textIndexPointer = 0; 
+    [SerializeField] private Text[] _resultsUITextArray;
+
+    [HideInInspector] public delegate int OnEndgGameTriggered();
+    [HideInInspector] public static OnEndgGameTriggered GetFinalScore;
 
     [HideInInspector] public delegate void OnPlaySFX(string audioName);
     [HideInInspector] public static OnPlaySFX PlaySFX;
-
+    
     void OnEnable()
     {
         PlayerControl.TogglePauseUI += PauseGame;
         Timer.CheckIsPaused += GetIsPaused;
+        Timer.TriggerEndGame += TriggerEndGame;
     }
     void Disable()
     {
         PlayerControl.TogglePauseUI -= PauseGame;
         Timer.CheckIsPaused -= GetIsPaused;
+        Timer.TriggerEndGame -= TriggerEndGame;
     }
 
     void Start()
@@ -152,7 +160,16 @@ public class UIManager : MonoBehaviour
     //ToDo method to Toggle active state of buttons <-- Might be redundant
     //ToDo method to show results menu on timer expiring
     //ToDo method to return player back to menu and clear player data
-    //ToDo method to enable and disable pause ui
-    //ToDo method that invokes enable/disable pause ui from PlayerControl
+
+    public void TriggerEndGame()
+    {
+        Debug.Log("TriggerEndGamecalled: Game Over!");
+        Debug.Log("_resultsUITextArray.Length: " + _resultsUITextArray.Length);
+        string tempString = GetFinalScore?.Invoke().ToString(); 
+        ToggleCanvas("ResultsCanvas");
+        
+        Debug.Log("Money: " + tempString);
+        _resultsUITextArray[0].text = tempString;
+    }
 
 }

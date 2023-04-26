@@ -14,6 +14,7 @@ public class Timer : MonoBehaviour
 
     [HideInInspector] public delegate void OnTimeHasPassed();
     [HideInInspector] public static OnTimeHasPassed SpawnNewCoin;
+    [HideInInspector] public static OnTimeHasPassed TriggerEndGame;
 
     [HideInInspector] public delegate bool OnCheckIsPaused();
     [HideInInspector] public static OnCheckIsPaused CheckIsPaused;
@@ -42,7 +43,7 @@ public class Timer : MonoBehaviour
         }
         StopCoroutine("Countdown");
         // gameManager.TriggerEndgame();
-        Debug.Log("Game OVER!");
+        TriggerEndGame?.Invoke();
         yield return null;
     }
 

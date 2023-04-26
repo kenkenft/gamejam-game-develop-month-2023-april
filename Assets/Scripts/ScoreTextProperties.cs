@@ -12,11 +12,13 @@ public class ScoreTextProperties : MonoBehaviour
     void OnEnable()
     {
         PlayerStorage.DepositCoin += UpdateScore;
+        UIManager.GetFinalScore += GetCurrentScore;
     }
 
     void OnDisable()
     {
         PlayerStorage.DepositCoin -= UpdateScore;
+        UIManager.GetFinalScore -= GetCurrentScore;
     }
     void Start()
     {
@@ -38,6 +40,7 @@ public class ScoreTextProperties : MonoBehaviour
 
     public int GetCurrentScore()
     {
+        Debug.Log("currentScore: " + currentScore);
         return currentScore;
     }
 }
