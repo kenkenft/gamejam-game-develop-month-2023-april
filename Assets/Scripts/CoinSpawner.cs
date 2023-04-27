@@ -18,11 +18,13 @@ public class CoinSpawner : MonoBehaviour
     void OnEnable()
     {
         Timer.SpawnNewCoin += SpawnCoinOnField;
+        Timer.CheckCoinsDespawn += UpdateCoinDespawnTimers;
     }
 
     void OnDisable()
     {
         Timer.SpawnNewCoin -= SpawnCoinOnField;
+        Timer.CheckCoinsDespawn -= UpdateCoinDespawnTimers;
     }
 
     public void GameStartSetUp()
@@ -120,5 +122,10 @@ public class CoinSpawner : MonoBehaviour
             _tmpObj = coin;
             EnableCoinComponents(false);
         }
+    }
+
+    public void UpdateCoinDespawnTimers()
+    {
+        Debug.Log("CoinSpawner.UpdateCoinDespawnTimers() invoked!");
     }
 }

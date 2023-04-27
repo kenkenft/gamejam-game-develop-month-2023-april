@@ -15,6 +15,7 @@ public class Timer : MonoBehaviour
     [HideInInspector] public delegate void OnTimeHasPassed();
     [HideInInspector] public static OnTimeHasPassed SpawnNewCoin;
     [HideInInspector] public static OnTimeHasPassed TriggerEndGame;
+    [HideInInspector] public static OnTimeHasPassed CheckCoinsDespawn;
 
     [HideInInspector] public delegate bool OnCheckIsPaused();
     [HideInInspector] public static OnCheckIsPaused CheckIsPaused;
@@ -38,6 +39,7 @@ public class Timer : MonoBehaviour
             {
                 timeLeft--;
                 timerText.text = "Time: " + timeLeft;
+                CheckCoinsDespawn?.Invoke();
                 TimeToSpawnNewCoin();
             }
         }
