@@ -5098,6 +5098,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -1262125033826925185, guid: b5b682033bebb1c4fb5d21984dc00de8, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 59386d28433894145ad7df2ede313531, type: 2}
     - target: {fileID: 4899643253863679951, guid: b5b682033bebb1c4fb5d21984dc00de8, type: 3}
       propertyPath: CoinSO
       value: 
@@ -5160,7 +5164,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5009580196961016647, guid: b5b682033bebb1c4fb5d21984dc00de8, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6392509867713573547, guid: b5b682033bebb1c4fb5d21984dc00de8, type: 3}
+      propertyPath: m_SortingOrder
+      value: 40
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b5b682033bebb1c4fb5d21984dc00de8, type: 3}
