@@ -6,6 +6,6 @@ using UnityEngine;
 public class CoinScriptable : ScriptableObject
 {
     public Sprite CoinSprite;
-    public int CoinValue, CoinWeight;
+    public int CoinValue, CoinWeight, CoinDespawnTime;
     public Color CoinColor;
 }

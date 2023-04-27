@@ -6,7 +6,7 @@ public class CoinBehaviour : MonoBehaviour
 {
     [SerializeField] public CoinScriptable CoinSO;
     [SerializeField] private SpriteRenderer _coinSpriteRenderer;
-    public int Value, Weight;
+    public int Value, Weight, DespawnTimerCurrent = 0, DespawnTimerMax = 0;
 
     // void Start()
     // {
@@ -19,7 +19,10 @@ public class CoinBehaviour : MonoBehaviour
         _coinSpriteRenderer.sprite = CoinSO.CoinSprite;
         _coinSpriteRenderer.color = CoinSO.CoinColor;
         Value = CoinSO.CoinValue;
-        Weight = CoinSO.CoinWeight; 
+        Weight = CoinSO.CoinWeight;
+
+        DespawnTimerCurrent = 0;
+        DespawnTimerMax = CoinSO.CoinDespawnTime;
     }
 
     public void ToggleCoinSprite(bool state)
