@@ -15,4 +15,4 @@ MonoBehaviour:
   CoinSprite: {fileID: 617836409, guid: 15fc5091ec3510642993a818770c1fdf, type: 3}
   CoinValue: 3
   CoinWeight: 2
-  CoinColor: {r: 0.90588236, g: 0.90588236, b: 0.90588236, a: 0}
+  CoinColor: {r: 0.8980392, g: 0.58431375, b: 0, a: 1}

@@ -17,6 +17,7 @@ public class CoinBehaviour : MonoBehaviour
     {
         _coinSpriteRenderer = gameObject.GetComponent<SpriteRenderer>();
         _coinSpriteRenderer.sprite = CoinSO.CoinSprite;
+        _coinSpriteRenderer.color = CoinSO.CoinColor;
         Value = CoinSO.CoinValue;
         Weight = CoinSO.CoinWeight; 
     }
