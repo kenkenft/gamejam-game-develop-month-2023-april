@@ -127,5 +127,11 @@ public class CoinSpawner : MonoBehaviour
     public void UpdateCoinDespawnTimers()
     {
         Debug.Log("CoinSpawner.UpdateCoinDespawnTimers() invoked!");
+        for(int i = 0; i < _pooledObjsList.Count; i ++)
+        {
+            if(_pooledObjsList[i].activeInHierarchy)
+                _pooledObjsList[i].GetComponent<CoinBehaviour>().UpdateCoinDespawnTimer();
+        }
     }
+
 }

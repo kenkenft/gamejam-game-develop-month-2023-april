@@ -29,4 +29,17 @@ public class CoinBehaviour : MonoBehaviour
     {
         _coinSpriteRenderer.enabled = state;
     }
+
+    public void UpdateCoinDespawnTimer()
+    {
+        if(DespawnTimerCurrent < DespawnTimerMax)
+        {    
+            DespawnTimerCurrent++;
+            Color tempColor = _coinSpriteRenderer.color;
+            tempColor.a = 1f - ((float)DespawnTimerCurrent/(float)DespawnTimerMax);
+            _coinSpriteRenderer.color = tempColor;
+        }
+        else
+            this.gameObject.SetActive(false);
+    }
 }
