@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: ac3f2f586abcbd343b0a38fd4ab4397a
+guid: fad92d081ddc89b41b07a0ae011a2dfe
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -117,12 +117,12 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Player-Walking-Side-v1.2.1_0
+      name: Player-Walking-Side-v1.2.2_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 64
+        width: 56
         height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -131,19 +131,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 97302dc5e780f404cb7b5a82c72ed024
-      internalID: -147934661
+      spriteID: 152da5ced12166146975e273f5da27bc
+      internalID: -2086342847
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player-Walking-Side-v1.2.1_1
+      name: Player-Walking-Side-v1.2.2_1
       rect:
         serializedVersion: 2
         x: 64
         y: 0
-        width: 64
+        width: 56
         height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -152,19 +152,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ee7653cebee095c41bf693a5f6909a29
-      internalID: 616184231
+      spriteID: bf8301239d02d02489f48acfdeb9fa38
+      internalID: -77429165
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player-Walking-Side-v1.2.1_2
+      name: Player-Walking-Side-v1.2.2_2
       rect:
         serializedVersion: 2
         x: 128
         y: 0
-        width: 64
+        width: 56
         height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -173,19 +173,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c48dd2a8580808843848170dd85fbb9a
-      internalID: -2058088637
+      spriteID: bac36a19a8c753e418ea80be86530a03
+      internalID: -1075973240
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player-Walking-Side-v1.2.1_3
+      name: Player-Walking-Side-v1.2.2_3
       rect:
         serializedVersion: 2
         x: 192
         y: 0
-        width: 64
+        width: 56
         height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -194,19 +194,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1d8ab64d66181fe4786e478e760eb107
-      internalID: 1821328319
+      spriteID: 7bace0aa8719af64fb21d5d43f3b87b6
+      internalID: 896235259
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player-Walking-Side-v1.2.1_4
+      name: Player-Walking-Side-v1.2.2_4
       rect:
         serializedVersion: 2
         x: 256
         y: 0
-        width: 64
+        width: 56
         height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -215,19 +215,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 51ac06032e117734eb8f2bc893f7d93f
-      internalID: -718579348
+      spriteID: 0aa9fa255ba44234d9d44d253ec7b137
+      internalID: -1551529985
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player-Walking-Side-v1.2.1_5
+      name: Player-Walking-Side-v1.2.2_5
       rect:
         serializedVersion: 2
         x: 320
         y: 0
-        width: 64
+        width: 56
         height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -236,19 +236,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 765f94d29602f204e8392557a1151bee
-      internalID: -579668786
+      spriteID: 74b764aa41f782f49a323d379962227f
+      internalID: -1202568581
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player-Walking-Side-v1.2.1_6
+      name: Player-Walking-Side-v1.2.2_6
       rect:
         serializedVersion: 2
         x: 384
         y: 0
-        width: 64
+        width: 56
         height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -257,19 +257,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8fafdcc257ca5bf49b688fb7c8e28e8f
-      internalID: 694816764
+      spriteID: f4dc06e69bd284544a0292f0d7d33939
+      internalID: -939420381
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player-Walking-Side-v1.2.1_7
+      name: Player-Walking-Side-v1.2.2_7
       rect:
         serializedVersion: 2
         x: 448
         y: 0
-        width: 64
+        width: 56
         height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -278,19 +278,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 56347dc0166be1446b69cd377d903ee5
-      internalID: -1635902679
+      spriteID: 0f6824bbc72b3384cb45ad78aefc56a6
+      internalID: -1659789814
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player-Walking-Side-v1.2.1_8
+      name: Player-Walking-Side-v1.2.2_8
       rect:
         serializedVersion: 2
         x: 512
         y: 0
-        width: 64
+        width: 56
         height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -299,19 +299,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d95b0bb393146d149a2121cc8b2aedb3
-      internalID: -2006931987
+      spriteID: d25eafa17ce3d024bb8b907e4870239d
+      internalID: -1942666579
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player-Walking-Side-v1.2.1_9
+      name: Player-Walking-Side-v1.2.2_9
       rect:
         serializedVersion: 2
         x: 576
         y: 0
-        width: 64
+        width: 56
         height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -320,19 +320,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f757d0fd2c10f124f81a91ee23ec9d8c
-      internalID: -407410440
+      spriteID: 4171e313d78bff44f97ca9268f930b96
+      internalID: -1486386678
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player-Walking-Side-v1.2.1_10
+      name: Player-Walking-Side-v1.2.2_10
       rect:
         serializedVersion: 2
         x: 640
         y: 0
-        width: 64
+        width: 56
         height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -341,19 +341,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2d99bd3028d66ca4ebf31119dbb0f322
-      internalID: -1476484221
+      spriteID: 61c098b9f4b54084eaabec4b24217570
+      internalID: 469446997
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player-Walking-Side-v1.2.1_11
+      name: Player-Walking-Side-v1.2.2_11
       rect:
         serializedVersion: 2
         x: 704
         y: 0
-        width: 64
+        width: 56
         height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -362,19 +362,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 73a22710eb6e41d41af01176b91fdf39
-      internalID: 1374066315
+      spriteID: 77d948193576e374aa41964e8d525720
+      internalID: 351531762
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player-Walking-Side-v1.2.1_12
+      name: Player-Walking-Side-v1.2.2_12
       rect:
         serializedVersion: 2
         x: 768
         y: 0
-        width: 64
+        width: 56
         height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -383,19 +383,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9d3a3cc6a087c74469ee09dc2a3d5564
-      internalID: 2092845683
+      spriteID: 86cd63c2696c8504d9f320a1938208ce
+      internalID: -980360282
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player-Walking-Side-v1.2.1_13
+      name: Player-Walking-Side-v1.2.2_13
       rect:
         serializedVersion: 2
         x: 832
         y: 0
-        width: 64
+        width: 56
         height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -404,19 +404,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e77a139ff475c5a439ba723a65ecf5e3
-      internalID: 582251032
+      spriteID: 12fc848b2ed66a746b8b7bdc2a2354bc
+      internalID: 318448147
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player-Walking-Side-v1.2.1_14
+      name: Player-Walking-Side-v1.2.2_14
       rect:
         serializedVersion: 2
         x: 896
         y: 0
-        width: 64
+        width: 56
         height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -425,19 +425,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 46395dc40ae04a049ac4635c235298d9
-      internalID: -140478309
+      spriteID: 42d66978ab99f444b94acabd7e5453e9
+      internalID: 1633543886
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player-Walking-Side-v1.2.1_15
+      name: Player-Walking-Side-v1.2.2_15
       rect:
         serializedVersion: 2
         x: 960
         y: 0
-        width: 64
+        width: 56
         height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -446,8 +446,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1f1d3922b9e287641a2b4b963a0efc8e
-      internalID: -332087776
+      spriteID: 2d05dfec26ce85e48b52c4a0ff8dd5ee
+      internalID: 770629039
       vertices: []
       indices: 
       edges: []
@@ -463,22 +463,22 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Player-Walking-Side-v1.2.1_1: 616184231
-      Player-Walking-Side-v1.2.1_15: -332087776
-      Player-Walking-Side-v1.2.1_3: 1821328319
-      Player-Walking-Side-v1.2.1_11: 1374066315
-      Player-Walking-Side-v1.2.1_4: -718579348
-      Player-Walking-Side-v1.2.1_14: -140478309
-      Player-Walking-Side-v1.2.1_13: 582251032
-      Player-Walking-Side-v1.2.1_8: -2006931987
-      Player-Walking-Side-v1.2.1_5: -579668786
-      Player-Walking-Side-v1.2.1_10: -1476484221
-      Player-Walking-Side-v1.2.1_2: -2058088637
-      Player-Walking-Side-v1.2.1_6: 694816764
-      Player-Walking-Side-v1.2.1_9: -407410440
-      Player-Walking-Side-v1.2.1_7: -1635902679
-      Player-Walking-Side-v1.2.1_0: -147934661
-      Player-Walking-Side-v1.2.1_12: 2092845683
+      Player-Walking-Side-v1.2.2_15: 770629039
+      Player-Walking-Side-v1.2.2_7: -1659789814
+      Player-Walking-Side-v1.2.2_10: 469446997
+      Player-Walking-Side-v1.2.2_12: -980360282
+      Player-Walking-Side-v1.2.2_1: -77429165
+      Player-Walking-Side-v1.2.2_8: -1942666579
+      Player-Walking-Side-v1.2.2_2: -1075973240
+      Player-Walking-Side-v1.2.2_3: 896235259
+      Player-Walking-Side-v1.2.2_0: -2086342847
+      Player-Walking-Side-v1.2.2_9: -1486386678
+      Player-Walking-Side-v1.2.2_13: 318448147
+      Player-Walking-Side-v1.2.2_5: -1202568581
+      Player-Walking-Side-v1.2.2_14: 1633543886
+      Player-Walking-Side-v1.2.2_11: 351531762
+      Player-Walking-Side-v1.2.2_4: -1551529985
+      Player-Walking-Side-v1.2.2_6: -939420381
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

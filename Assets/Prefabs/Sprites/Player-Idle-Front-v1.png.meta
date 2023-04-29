@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 90ae4bd6cbba3194fbb0028aa5072a9c
+guid: 5acbb30c40f9f3e43bcc34c62eea8957
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -117,7 +117,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Player-Walking-Back-v1.1_0
+      name: Player-Idle-Front-v1_0
       rect:
         serializedVersion: 2
         x: 0
@@ -131,14 +131,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0c112a82ccc110d4dbc1ebd999c2fa5d
-      internalID: -1154226252
+      spriteID: 9d2d6f60c0406844eba6ff655947b55d
+      internalID: 628735578
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player-Walking-Back-v1.1_1
+      name: Player-Idle-Front-v1_1
       rect:
         serializedVersion: 2
         x: 64
@@ -152,14 +152,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8bf806a23b4a7a84b8869f0fa3dd8343
-      internalID: -1702194002
+      spriteID: bdd908626d66e9d47bee87cd5de1cdc2
+      internalID: -1708180401
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player-Walking-Back-v1.1_2
+      name: Player-Idle-Front-v1_2
       rect:
         serializedVersion: 2
         x: 128
@@ -173,14 +173,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9c83ac73781091d47ab5ff6c8d2d57d6
-      internalID: -703107311
+      spriteID: 6b96aa7ba4f24504aa86c9ac417927a9
+      internalID: -1199849246
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player-Walking-Back-v1.1_3
+      name: Player-Idle-Front-v1_3
       rect:
         serializedVersion: 2
         x: 192
@@ -194,14 +194,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7d8ee7d6c84993241ac6a8ad46a4564c
-      internalID: 1501514678
+      spriteID: 355caac6952d6cc4aac4244127cfeda5
+      internalID: 382487550
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player-Walking-Back-v1.1_4
+      name: Player-Idle-Front-v1_4
       rect:
         serializedVersion: 2
         x: 256
@@ -215,14 +215,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bf2ade4b9c0e1774cb4b045d00568e26
-      internalID: 1394353626
+      spriteID: 6b1156c18ca7cfd4788bbf802dc36c8c
+      internalID: 1119892727
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player-Walking-Back-v1.1_5
+      name: Player-Idle-Front-v1_5
       rect:
         serializedVersion: 2
         x: 320
@@ -236,14 +236,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4144790ab6e5c3143a939cb994959477
-      internalID: 1812454345
+      spriteID: 9302a430fbc9bb64fb79c7d0c9e6f5bc
+      internalID: 85043157
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player-Walking-Back-v1.1_6
+      name: Player-Idle-Front-v1_6
       rect:
         serializedVersion: 2
         x: 384
@@ -257,14 +257,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 88c588ce3aec4b149b619c19eb47498b
-      internalID: -809815104
+      spriteID: ab01736cf352ca945accfd8829d09545
+      internalID: 2097774030
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player-Walking-Back-v1.1_7
+      name: Player-Idle-Front-v1_7
       rect:
         serializedVersion: 2
         x: 448
@@ -278,14 +278,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 332a462c2c9317f4190ffc718145b1de
-      internalID: -1373749288
+      spriteID: a4a3a35472e20574b886844b3908c5eb
+      internalID: -228790223
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player-Walking-Back-v1.1_8
+      name: Player-Idle-Front-v1_8
       rect:
         serializedVersion: 2
         x: 512
@@ -299,14 +299,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c4f20b2622a153d4db71f6f8f1f7fe2b
-      internalID: 1276743168
+      spriteID: dbf167aeb81efc648ac1109c0d398871
+      internalID: -1473808374
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player-Walking-Back-v1.1_9
+      name: Player-Idle-Front-v1_9
       rect:
         serializedVersion: 2
         x: 576
@@ -320,14 +320,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ea3f4612cf254de4d8d8425e001fa3af
-      internalID: -103962525
+      spriteID: b218d8a9e67f63848815145d6fbeebd4
+      internalID: -236965769
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player-Walking-Back-v1.1_10
+      name: Player-Idle-Front-v1_10
       rect:
         serializedVersion: 2
         x: 640
@@ -341,14 +341,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5874129f66a9e4d4998a50415ac61105
-      internalID: 1639690719
+      spriteID: c615fe52f14dfac4d81403b5d2529f1b
+      internalID: 27046575
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player-Walking-Back-v1.1_11
+      name: Player-Idle-Front-v1_11
       rect:
         serializedVersion: 2
         x: 704
@@ -362,14 +362,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b13f97f221ef5cd439d70052a51c3051
-      internalID: -1783152024
+      spriteID: 7579773058b7cdc4b8d6a2be599ed44d
+      internalID: -141438868
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player-Walking-Back-v1.1_12
+      name: Player-Idle-Front-v1_12
       rect:
         serializedVersion: 2
         x: 768
@@ -383,14 +383,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 77534fd55cd742e48807151cfec1f3ba
-      internalID: 593544073
+      spriteID: 064a40310dedcf84d93aeba053dfa4a6
+      internalID: -710646852
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player-Walking-Back-v1.1_13
+      name: Player-Idle-Front-v1_13
       rect:
         serializedVersion: 2
         x: 832
@@ -404,50 +404,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 97612e4e862e29442a782c2a986cb6f3
-      internalID: -8374842
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Player-Walking-Back-v1.1_14
-      rect:
-        serializedVersion: 2
-        x: 896
-        y: 0
-        width: 56
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c2e196e1a746f39439651d14e5d00488
-      internalID: -1515307609
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Player-Walking-Back-v1.1_15
-      rect:
-        serializedVersion: 2
-        x: 960
-        y: 0
-        width: 56
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e1d3d6d91a1335247bba3200d54da5b4
-      internalID: -965784319
+      spriteID: 1d6a1d4204ff0be4eabb5c58f84ab1a7
+      internalID: 1499586724
       vertices: []
       indices: 
       edges: []
@@ -463,22 +421,20 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Player-Walking-Back-v1.1_4: 1394353626
-      Player-Walking-Back-v1.1_8: 1276743168
-      Player-Walking-Back-v1.1_10: 1639690719
-      Player-Walking-Back-v1.1_9: -103962525
-      Player-Walking-Back-v1.1_11: -1783152024
-      Player-Walking-Back-v1.1_12: 593544073
-      Player-Walking-Back-v1.1_3: 1501514678
-      Player-Walking-Back-v1.1_0: -1154226252
-      Player-Walking-Back-v1.1_15: -965784319
-      Player-Walking-Back-v1.1_2: -703107311
-      Player-Walking-Back-v1.1_5: 1812454345
-      Player-Walking-Back-v1.1_13: -8374842
-      Player-Walking-Back-v1.1_6: -809815104
-      Player-Walking-Back-v1.1_1: -1702194002
-      Player-Walking-Back-v1.1_14: -1515307609
-      Player-Walking-Back-v1.1_7: -1373749288
+      Player-Idle-Front-v1_7: -228790223
+      Player-Idle-Front-v1_8: -1473808374
+      Player-Idle-Front-v1_1: -1708180401
+      Player-Idle-Front-v1_9: -236965769
+      Player-Idle-Front-v1_11: -141438868
+      Player-Idle-Front-v1_12: -710646852
+      Player-Idle-Front-v1_4: 1119892727
+      Player-Idle-Front-v1_13: 1499586724
+      Player-Idle-Front-v1_2: -1199849246
+      Player-Idle-Front-v1_3: 382487550
+      Player-Idle-Front-v1_0: 628735578
+      Player-Idle-Front-v1_6: 2097774030
+      Player-Idle-Front-v1_10: 27046575
+      Player-Idle-Front-v1_5: 85043157
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
