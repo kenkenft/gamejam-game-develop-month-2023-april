@@ -101,7 +101,7 @@ public class PlayerControl : MonoBehaviour
         if(_moveXY[1] !=0)
         {    
             _isMovingVertical = true;
-            if(_moveXY[1] >=0)
+            if(_moveXY[1] > 0)
             {
                 animator.SetBool("_isMovingUp", true);
                 animator.SetBool("_isMovingDown", false);
