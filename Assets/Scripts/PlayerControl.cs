@@ -99,25 +99,53 @@ public class PlayerControl : MonoBehaviour
         animator.SetFloat("_velocityX", Mathf.Abs(_moveXY[0]));
 
         if(_moveXY[1] !=0)
+        {    
             _isMovingVertical = true;
+            if(_moveXY[1] >=0)
+            {
+                animator.SetBool("_isMovingUp", true);
+                animator.SetBool("_isMovingDown", false);
+            }
+            else
+            {
+                animator.SetBool("_isMovingUp", false);
+                animator.SetBool("_isMovingDown", true);
+            }
+        }
         else
+        {    
             _isMovingVertical = false;
+            animator.SetBool("_isMovingUp", false);
+            animator.SetBool("_isMovingDown", false);
+        }
         
         if(_moveXY[0] !=0)
+        {    
             _isMovingSideways = true;
+            animator.SetBool("_isMovingSideways", true);
+        }
         else
+        {    
             _isMovingSideways = false;
+            animator.SetBool("_isMovingSideways", false);
+        }
         
         if(_isMovingVertical || _isMovingSideways)
         {    
-            animator.SetBool("_isMoving", true);
+            // animator.SetBool("_isMoving", true);
             if(_moveXY[0] > 0f && !_isFacingRight && _isMovingSideways)
                     FlipSprite(); 
             else if(_moveXY[0] < 0f && _isFacingRight && _isMovingSideways) 
                     FlipSprite();
         }
-        else
-            animator.SetBool("_isMoving", false);
+        // else
+        //     animator.SetBool("_isMoving", false);
+
+        // if(!_isMovingSideways && !_isMovingVertical)
+        //     animator.SetBool("_isIdle", true);
+        // else
+        //     animator.SetBool("_isIdle", false);
+
 
         
     }
