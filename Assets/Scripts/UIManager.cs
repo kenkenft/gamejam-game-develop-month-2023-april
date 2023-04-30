@@ -19,6 +19,8 @@ public class UIManager : MonoBehaviour
     private int _textIndexPointer = 0; 
     [SerializeField] private Text[] _resultsUITextArray;
 
+    [HideInInspector] public delegate void OnPlayButtonClicked();
+    [HideInInspector] public static OnPlayButtonClicked StartGameSetUp;
     [HideInInspector] public delegate int OnEndgGameTriggered();
     [HideInInspector] public static OnEndgGameTriggered GetFinalScore;
 
@@ -123,10 +125,13 @@ public class UIManager : MonoBehaviour
 
     public void PlayGame()
     {
+        Time.timeScale = 1;
         Debug.Log("Play button pressed!");
         ToggleCanvas("PlayerOverlayCanvas");
+        
         _isPlaying = true;
         _isPaused = false;
+        StartGameSetUp?.Invoke();
         PlaySFX?.Invoke("deposit");
         // Reset player score to zero, 
         // reset play speed to base default, 
@@ -173,13 +178,13 @@ public class UIManager : MonoBehaviour
         ToggleCanvas("ResultsCanvas");
         _isPlaying = false;
         
-        if(score > 18000)
+        if(score > 14000)
         {
             colorTagIndex = 0;
             results = "A";
             PlaySFX?.Invoke("resultsBest");
         }
-        else if(score > 0 && score <= 18000)
+        else if(score > 0 && score <= 14000)
         {    
             colorTagIndex = 2;
             results = "B";
@@ -198,8 +203,8 @@ public class UIManager : MonoBehaviour
         _resultsUITextArray[2].text = colorTag[colorTagIndex] + _resultsUITextArray[2].text.ToString() + "</color>";
         _resultsUITextArray[3].text = colorTag[colorTagIndex] + _resultsUITextArray[3].text.ToString() + "</color>";
         _resultsUITextArray[4].text = colorTag[colorTagIndex] + _resultsUITextArray[4].text.ToString() + "</color>";
-        _resultsUITextArray[5].text = colorTag[colorTagIndex] + _resultsUITextArray[5].text.ToString() + "</color>";
-        _resultsUITextArray[6].text = colorTag[colorTagIndex] + _resultsUITextArray[6].text.ToString() + "</color>";
+        // _resultsUITextArray[5].text = colorTag[colorTagIndex] + _resultsUITextArray[5].text.ToString() + "</color>";
+        // _resultsUITextArray[6].text = colorTag[colorTagIndex] + _resultsUITextArray[6].text.ToString() + "</color>";
 
         //ToDo Set endscreen graphics based on score.
         //ToDo Play Audio based on score

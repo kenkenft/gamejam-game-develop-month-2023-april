@@ -5,30 +5,38 @@ using UnityEngine;
 
 public class PlayerOverlay : MonoBehaviour
 {
-    ScoreTextProperties scoreTextProperties;
-    Timer timer;
-    Canvas playerOverlayCanvas;
+    public ScoreTextProperties scoreTextProperties;
+    public Timer timer;
+    // Canvas playerOverlayCanvas;
 
-    void Start()
+    void OnEnable()
     {
-        SetUp();
+        // SetUp();
         // StartTimer(0);
+        UIManager.StartGameSetUp += GameStartSetUp;
+    }
+
+    void OnDisable()
+    {
+        // SetUp();
+        // StartTimer(0);
+        UIManager.StartGameSetUp -= GameStartSetUp;
     }
     
     public void SetUp()
     {
-        playerOverlayCanvas = GetComponentInChildren<Canvas>();
+        // playerOverlayCanvas = GetComponentInChildren<Canvas>();
         
-        scoreTextProperties = GetComponentInChildren<ScoreTextProperties>();
-        timer = GetComponentInChildren<Timer>();
+        // scoreTextProperties = GetComponentInChildren<ScoreTextProperties>();
+        // timer = GetComponentInChildren<Timer>();
     }
 
     public void GameStartSetUp()
     {
-        playerOverlayCanvas = GetComponentInChildren<Canvas>();
+        // playerOverlayCanvas = GetComponentInChildren<Canvas>();
         
-        scoreTextProperties = GetComponentInChildren<ScoreTextProperties>();
-        timer = GetComponentInChildren<Timer>();
+        // scoreTextProperties = GetComponentInChildren<ScoreTextProperties>();
+        // timer = GetComponentInChildren<Timer>();
         StartTimer(120);
         ResetOverlay();
     }

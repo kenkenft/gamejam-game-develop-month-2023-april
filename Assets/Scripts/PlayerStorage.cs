@@ -22,6 +22,7 @@ public class PlayerStorage : MonoBehaviour
     
     void OnEnable()
     {
+        UIManager.StartGameSetUp += GameStartSetUp;
         PlayerControl.CheckCanDeposit += GetCanDeposit;
         PlayerControl.CallDepositCoins += DepositCoins;
         PlayerControl.SetPlayerStorage += GameStartSetUp;
@@ -29,6 +30,7 @@ public class PlayerStorage : MonoBehaviour
 
     void OnDisable()
     {
+        UIManager.StartGameSetUp -= GameStartSetUp;
         PlayerControl.CheckCanDeposit -= GetCanDeposit;
         PlayerControl.CallDepositCoins -= DepositCoins;
         PlayerControl.SetPlayerStorage -= GameStartSetUp;

@@ -314,17 +314,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 20}
   m_EdgeRadius: 0
---- !u!114 &67533854 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 150576499322046894, guid: 7d093420faf8b264dac3899f57923f6d, type: 3}
-  m_PrefabInstance: {fileID: 4007923476168059507}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c82525fb6f4812943b8bcfec083ef960, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &95709621
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -481,54 +470,6 @@ MonoBehaviour:
       - m_Target: {fileID: 2066347917}
         m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
         m_MethodName: PlayGame
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 882156279843362176}
-        m_TargetAssemblyTypeName: PlayerControl, Assembly-CSharp
-        m_MethodName: GameStartSetUp
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 882156279843362175}
-        m_TargetAssemblyTypeName: PlayerStorage, Assembly-CSharp
-        m_MethodName: GameStartSetUp
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1399833170}
-        m_TargetAssemblyTypeName: PlayerOverlay, Assembly-CSharp
-        m_MethodName: GameStartSetUp
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 67533854}
-        m_TargetAssemblyTypeName: CoinSpawner, Assembly-CSharp
-        m_MethodName: GameStartSetUp
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -903,6 +844,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 362485652}
   m_CullTransparentMesh: 1
+--- !u!114 &444142118 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 102978723339015255, guid: b17f21ffa6ecdd54cb20979ae6cfbefd, type: 3}
+  m_PrefabInstance: {fileID: 1989377577}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a934d206a5170504eae55508424a0e72, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &465582125
 GameObject:
   m_ObjectHideFlags: 0
@@ -976,10 +928,14 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: 'Controls:
 
-    - Move: <color=#feae34>W,A,S,D</color>
+    - Menus: <color=#feae34>Mouse</color>
 
-    - Deposit:
-    <color=#feae34>E</color>'
+    - Move: <color=#feae34>W,A,S,D
+    or Arrows</color>
+
+    - Deposit: <color=#feae34>E</color>
+
+    - Pause: <color=#feae34>P</color>'
 --- !u!222 &465582128
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1786,6 +1742,17 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 20, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &680773040 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 102978722791249079, guid: b17f21ffa6ecdd54cb20979ae6cfbefd, type: 3}
+  m_PrefabInstance: {fileID: 1989377577}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5f0cbe5bcca1ef47957e5f94e15b066, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &711965825
 GameObject:
   m_ObjectHideFlags: 0
@@ -2257,54 +2224,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 882156279843362176}
-        m_TargetAssemblyTypeName: PlayerControl, Assembly-CSharp
-        m_MethodName: GameStartSetUp
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 882156279843362175}
-        m_TargetAssemblyTypeName: PlayerStorage, Assembly-CSharp
-        m_MethodName: GameStartSetUp
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1399833170}
-        m_TargetAssemblyTypeName: PlayerOverlay, Assembly-CSharp
-        m_MethodName: GameStartSetUp
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 67533854}
-        m_TargetAssemblyTypeName: CoinSpawner, Assembly-CSharp
-        m_MethodName: GameStartSetUp
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &845848357
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2444,7 +2363,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &868002771
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2460,10 +2379,10 @@ RectTransform:
   m_Father: {fileID: 880215111}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 150, y: -137.5}
+  m_SizeDelta: {x: 300, y: 55}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &868002772
 MonoBehaviour:
@@ -3656,17 +3575,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1399833170 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 102978721603350645, guid: b17f21ffa6ecdd54cb20979ae6cfbefd, type: 3}
-  m_PrefabInstance: {fileID: 1989377577}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b5420f5e326781e45885407777e46cb9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1502133033
 GameObject:
   m_ObjectHideFlags: 0
@@ -4017,7 +3925,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1648614178
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4033,10 +3941,10 @@ RectTransform:
   m_Father: {fileID: 542236048}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 100, y: -137.5}
+  m_SizeDelta: {x: 200, y: 55}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1648614179
 MonoBehaviour:
@@ -4155,12 +4063,15 @@ MonoBehaviour:
 
     Developer: Ken Tang
 
+    Animations and result screens: Ken
+    Tang
+
     Assets from:
 
-    - "Free Pixel
-    Font Thaleah" by Tiny Worlds
+    - "Free Pixel Font Thaleah" by Tiny Worlds
 
-    - "Free Casual Game SFX Pack" by Dustyroom'
+    -
+    "Free Casual Game SFX Pack" by Dustyroom'
 --- !u!222 &1663571991
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5021,6 +4932,14 @@ PrefabInstance:
       propertyPath: m_RenderMode
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 102978721603350645, guid: b17f21ffa6ecdd54cb20979ae6cfbefd, type: 3}
+      propertyPath: timer
+      value: 
+      objectReference: {fileID: 444142118}
+    - target: {fileID: 102978721603350645, guid: b17f21ffa6ecdd54cb20979ae6cfbefd, type: 3}
+      propertyPath: scoreTextProperties
+      value: 
+      objectReference: {fileID: 680773040}
     - target: {fileID: 102978721603350648, guid: b17f21ffa6ecdd54cb20979ae6cfbefd, type: 3}
       propertyPath: m_Name
       value: PlayerOverlayCanvas
@@ -5241,11 +5160,11 @@ MonoBehaviour:
   _resultsUITextArray:
   - {fileID: 1944979852}
   - {fileID: 362485654}
-  - {fileID: 868002772}
   - {fileID: 747153774}
   - {fileID: 799627084}
-  - {fileID: 1648614179}
   - {fileID: 960602046}
+  - {fileID: 1648614179}
+  - {fileID: 868002772}
 --- !u!1 &2121830422
 GameObject:
   m_ObjectHideFlags: 0
@@ -5291,36 +5210,12 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 882156279577420533, guid: 2a769d07c69e5b14db0980fa040cfbb7, type: 3}
-      propertyPath: m_SortingOrder
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 882156280097348868, guid: 2a769d07c69e5b14db0980fa040cfbb7, type: 3}
-      propertyPath: animator
-      value: 
-      objectReference: {fileID: 882156279843362178}
-    - target: {fileID: 882156280097348868, guid: 2a769d07c69e5b14db0980fa040cfbb7, type: 3}
-      propertyPath: _playerSpeed
-      value: 30
-      objectReference: {fileID: 0}
-    - target: {fileID: 882156280097348868, guid: 2a769d07c69e5b14db0980fa040cfbb7, type: 3}
-      propertyPath: _playerSpeedBase
-      value: 10
-      objectReference: {fileID: 0}
     - target: {fileID: 882156280097348869, guid: 2a769d07c69e5b14db0980fa040cfbb7, type: 3}
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 882156280097348870, guid: 2a769d07c69e5b14db0980fa040cfbb7, type: 3}
       propertyPath: m_RootOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 882156280097348870, guid: 2a769d07c69e5b14db0980fa040cfbb7, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 882156280097348870, guid: 2a769d07c69e5b14db0980fa040cfbb7, type: 3}
-      propertyPath: m_LocalScale.y
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 882156280097348870, guid: 2a769d07c69e5b14db0980fa040cfbb7, type: 3}
@@ -5365,44 +5260,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2a769d07c69e5b14db0980fa040cfbb7, type: 3}
---- !u!1 &882156279843362174 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 882156280097348869, guid: 2a769d07c69e5b14db0980fa040cfbb7, type: 3}
-  m_PrefabInstance: {fileID: 882156279843362173}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &882156279843362175
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 882156279843362174}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4da3c1b8d99e3f04cac1a1fc7fae05a8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _coinCapacityMax: 10
-  _coinCapacityUsed: 0
-  _coinsCollected: []
-  _isCoinCollided: 0
-  _canDeposit: 0
---- !u!114 &882156279843362176 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 882156280097348868, guid: 2a769d07c69e5b14db0980fa040cfbb7, type: 3}
-  m_PrefabInstance: {fileID: 882156279843362173}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 882156279843362174}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9bf17e728bfa1e94d8638c4222159d5b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!95 &882156279843362178 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 4594685180156783843, guid: 2a769d07c69e5b14db0980fa040cfbb7, type: 3}
-  m_PrefabInstance: {fileID: 882156279843362173}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2862116072809652915
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5504,6 +5361,10 @@ PrefabInstance:
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 150576499322046894, guid: 7d093420faf8b264dac3899f57923f6d, type: 3}
+      propertyPath: _coinTypes.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 150576499322046894, guid: 7d093420faf8b264dac3899f57923f6d, type: 3}
       propertyPath: CoinTypes.Array.data[0]
       value: 
       objectReference: {fileID: 11400000, guid: 2b46b8c8a33160149a76c9489f3ab679, type: 2}
@@ -5517,6 +5378,22 @@ PrefabInstance:
       objectReference: {fileID: 11400000, guid: f7fc1f4d6e9f2e34a9c7562ef56616d7, type: 2}
     - target: {fileID: 150576499322046894, guid: 7d093420faf8b264dac3899f57923f6d, type: 3}
       propertyPath: CoinTypes.Array.data[3]
+      value: 
+      objectReference: {fileID: 11400000, guid: d8d7683c592827a4bba71cfcd2136612, type: 2}
+    - target: {fileID: 150576499322046894, guid: 7d093420faf8b264dac3899f57923f6d, type: 3}
+      propertyPath: _coinTypes.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 2b46b8c8a33160149a76c9489f3ab679, type: 2}
+    - target: {fileID: 150576499322046894, guid: 7d093420faf8b264dac3899f57923f6d, type: 3}
+      propertyPath: _coinTypes.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: 630d5c1208812264cbe1b7749cfb0a5a, type: 2}
+    - target: {fileID: 150576499322046894, guid: 7d093420faf8b264dac3899f57923f6d, type: 3}
+      propertyPath: _coinTypes.Array.data[2]
+      value: 
+      objectReference: {fileID: 11400000, guid: f7fc1f4d6e9f2e34a9c7562ef56616d7, type: 2}
+    - target: {fileID: 150576499322046894, guid: 7d093420faf8b264dac3899f57923f6d, type: 3}
+      propertyPath: _coinTypes.Array.data[3]
       value: 
       objectReference: {fileID: 11400000, guid: d8d7683c592827a4bba71cfcd2136612, type: 2}
     - target: {fileID: 150576499322046894, guid: 7d093420faf8b264dac3899f57923f6d, type: 3}
@@ -5608,6 +5485,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 543532977874788533, guid: b860eee2dd885fc469546c8236ef07a7, type: 3}
+      propertyPath: m_Size.x
+      value: 10.33
+      objectReference: {fileID: 0}
+    - target: {fileID: 543532977874788533, guid: b860eee2dd885fc469546c8236ef07a7, type: 3}
+      propertyPath: m_Size.y
+      value: 8.33
+      objectReference: {fileID: 0}
     - target: {fileID: 1282324004892651847, guid: b860eee2dd885fc469546c8236ef07a7, type: 3}
       propertyPath: m_Name
       value: CoinHole

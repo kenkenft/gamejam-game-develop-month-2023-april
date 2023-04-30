@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CoinSprite: {fileID: -306281484, guid: 75beff4cc1abdfe4cbe7a22afcc0d0e7, type: 3}
   CoinValue: 1
-  CoinWeight: 4
+  CoinWeight: 2
   CoinDespawnTime: 10
   CoinColor: {r: 0.3490566, g: 0.24461445, b: 0, a: 1}

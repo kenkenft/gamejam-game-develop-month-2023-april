@@ -11,26 +11,29 @@ public class CoinSpawner : MonoBehaviour
     private List<GameObject> _pooledObjsList = new List<GameObject>();
 
     private Vector3 _spawnTargetPos = new Vector3(0f, 0f, 0f);
-    private List<CoinScriptable> _coinTypes = new List<CoinScriptable>();
+    // private List<CoinScriptable> _coinTypes = new List<CoinScriptable>();
+    public CoinScriptable[] _coinTypes;
 
     private int _tempInt;
 
     void OnEnable()
     {
+        UIManager.StartGameSetUp += GameStartSetUp;
         Timer.SpawnNewCoin += SpawnCoinOnField;
         Timer.CheckCoinsDespawn += UpdateCoinDespawnTimers;
     }
 
     void OnDisable()
     {
+        UIManager.StartGameSetUp -= GameStartSetUp;
         Timer.SpawnNewCoin -= SpawnCoinOnField;
         Timer.CheckCoinsDespawn -= UpdateCoinDespawnTimers;
     }
 
     public void GameStartSetUp()
     {
-         _coinTypes.Clear();
-         _coinTypes.AddRange(GameProperties.GetCoinScriptables());
+        //  _coinTypes.Clear();
+        //  _coinTypes.AddRange(GameProperties.GetCoinScriptables());
         if(_pooledObjsList.Count < 1)
             InstantiateCoinPrefabPool(50);
         else
@@ -113,22 +116,27 @@ public class CoinSpawner : MonoBehaviour
 
         if(_tempInt > 95)
         {    
-            Debug.Log("Gold coin!: " + (_coinTypes.Count-1));
-            return _coinTypes[_coinTypes.Count-1];
+            // Debug.Log("Gold coin!: " + (_coinTypes.Count-1));
+            // return _coinTypes[_coinTypes.Count-1];
+            Debug.Log("Gold coin!: " + (_coinTypes.Length-1));
+            return _coinTypes[_coinTypes.Length-1];
         }
         else if (_tempInt <= 95 && _tempInt > 85)
         {    
-            Debug.Log("Silver coin!: " + (_coinTypes.Count-1));
+            // Debug.Log("Silver coin!: " + (_coinTypes.Count-1));
+            Debug.Log("Silver coin!: " + (_coinTypes.Length-1));
             return _coinTypes[2];
         }
         else if (_tempInt <= 85 && _tempInt > 60)
         {    
-            Debug.Log("Copper coin!: " + (_coinTypes.Count-1));
+            // Debug.Log("Copper coin!: " + (_coinTypes.Count-1));
+            Debug.Log("Copper coin!: " + (_coinTypes.Length-1));
             return _coinTypes[1];
         }
         else
         {
-            Debug.Log("Other coin!: " + (_coinTypes.Count-1));
+            // Debug.Log("Other coin!: " + (_coinTypes.Count-1));
+            Debug.Log("Other coin!: " + (_coinTypes.Length-1));
             return _coinTypes[0];
         }
     } 

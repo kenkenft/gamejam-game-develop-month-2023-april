@@ -27,12 +27,14 @@ public class PlayerControl : MonoBehaviour
     
     void OnEnable()
     {
+        UIManager.StartGameSetUp += GameStartSetUp;
         PlayerStorage.ApplyWeightPenalty += AddPlayerSpeed;
         _playerSpeed = _playerSpeedBase;
     }
 
     void OnDisable()
     {
+        UIManager.StartGameSetUp -= GameStartSetUp;
         PlayerStorage.ApplyWeightPenalty -= AddPlayerSpeed;
     }
     
