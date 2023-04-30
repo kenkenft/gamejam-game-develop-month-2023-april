@@ -9,10 +9,11 @@ public class UIManager : MonoBehaviour
     private Dictionary<string, Canvas> _canvasesDict = new Dictionary<string, Canvas>(){};
     private Canvas _playerOverlayCanvas, _titleCanvas, _pauseCanvas, _resultsCanvas;
     private List<Canvas> _canvasList = new List<Canvas>();
+    public Image ResultsPanelImage;
 
     bool _isPlaying = false, _isPaused = false;
 
-    public SpriteRenderer[] EndResultScreens;
+    public Sprite[] EndResultImages;
 
     [SerializeField] private GameObject[] _instructionTextArray;
     private int _textIndexPointer = 0; 
@@ -177,6 +178,7 @@ public class UIManager : MonoBehaviour
         else
             colorTagIndex = 1;
 
+        ResultsPanelImage.sprite = EndResultImages[colorTagIndex];
         _resultsUITextArray[0].text = colorTag[colorTagIndex] + tempString + "</color>";
         _resultsUITextArray[1].text = colorTag[colorTagIndex] + _resultsUITextArray[1].text + "</color>";
         _resultsUITextArray[2].text = colorTag[colorTagIndex] + _resultsUITextArray[2].text + "</color>";
