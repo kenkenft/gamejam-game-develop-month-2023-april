@@ -168,19 +168,33 @@ public class UIManager : MonoBehaviour
     public void TriggerEndGame()
     {
         int score = GetFinalScore.Invoke(), colorTagIndex = 0;
-        string[] colorTag = {"<color=#000000>", "<color=#ffffff>"};
-        string tempString = score.ToString(); 
+        string[] colorTag = {"<color=#000000>", "<color=#ffffff>", "<color=#ffffff>"};
+        string tempString = score.ToString(), results; 
         ToggleCanvas("ResultsCanvas");
         _isPlaying = false;
         
-        if(score > 0)
+        if(score > 18000)
+        {
             colorTagIndex = 0;
+            results = "A";
+            PlaySFX?.Invoke("resultsBest");
+        }
+        else if(score > 0 && score <= 18000)
+        {    
+            colorTagIndex = 2;
+            results = "B";
+            PlaySFX?.Invoke("resultsAverage");
+        }
         else
+        {    
+            results = "F";
             colorTagIndex = 1;
+            PlaySFX?.Invoke("resultsFail");
+        }
 
         ResultsPanelImage.sprite = EndResultImages[colorTagIndex];
         _resultsUITextArray[0].text = colorTag[colorTagIndex] + tempString + "</color>";
-        _resultsUITextArray[1].text = colorTag[colorTagIndex] + _resultsUITextArray[1].text.ToString() + "</color>";
+        _resultsUITextArray[1].text = colorTag[colorTagIndex] + results + "</color>";
         _resultsUITextArray[2].text = colorTag[colorTagIndex] + _resultsUITextArray[2].text.ToString() + "</color>";
         _resultsUITextArray[3].text = colorTag[colorTagIndex] + _resultsUITextArray[3].text.ToString() + "</color>";
         _resultsUITextArray[4].text = colorTag[colorTagIndex] + _resultsUITextArray[4].text.ToString() + "</color>";

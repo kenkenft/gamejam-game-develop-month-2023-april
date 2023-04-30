@@ -77,12 +77,17 @@ public class CoinSpawner : MonoBehaviour
 
     public void SpawnCoinOnField()
     {
-        _tmpObj = GetPooledCoin();
-        _tmpObj.GetComponent<CoinBehaviour>().CoinSO = SelectRandomCoinValue();
-        _tmpObj.GetComponent<CoinBehaviour>().SetUpCoin();
-        SelectValidSpawnCoord();
-        EnableCoinComponents(true);
-        _tmpObj.transform.position = _spawnTargetPos;
+        int randomInt = Random.Range(1,6);
+        
+        for(int i=0; i < randomInt; i++)
+        {
+            _tmpObj = GetPooledCoin();
+            _tmpObj.GetComponent<CoinBehaviour>().CoinSO = SelectRandomCoinValue();
+            _tmpObj.GetComponent<CoinBehaviour>().SetUpCoin();
+            SelectValidSpawnCoord();
+            EnableCoinComponents(true);
+            _tmpObj.transform.position = _spawnTargetPos;
+        }
     }
     private void SelectValidSpawnCoord()
     {
