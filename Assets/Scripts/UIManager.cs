@@ -12,6 +12,8 @@ public class UIManager : MonoBehaviour
 
     bool _isPlaying = false, _isPaused = false;
 
+    public SpriteRenderer[] EndResultScreens;
+
     [SerializeField] private GameObject[] _instructionTextArray;
     private int _textIndexPointer = 0; 
     [SerializeField] private Text[] _resultsUITextArray;
@@ -164,11 +166,24 @@ public class UIManager : MonoBehaviour
     
     public void TriggerEndGame()
     {
-        string tempString = GetFinalScore?.Invoke().ToString(); 
+        int score = GetFinalScore.Invoke(), colorTagIndex = 0;
+        string[] colorTag = {"<color=#000000>", "<color=#ffffff>"};
+        string tempString = score.ToString(); 
         ToggleCanvas("ResultsCanvas");
         _isPlaying = false;
         
-        _resultsUITextArray[0].text = tempString;
+        if(score > 0)
+            colorTagIndex = 0;
+        else
+            colorTagIndex = 1;
+
+        _resultsUITextArray[0].text = colorTag[colorTagIndex] + tempString + "</color>";
+        _resultsUITextArray[1].text = colorTag[colorTagIndex] + _resultsUITextArray[1].text + "</color>";
+        _resultsUITextArray[2].text = colorTag[colorTagIndex] + _resultsUITextArray[2].text + "</color>";
+        _resultsUITextArray[3].text = colorTag[colorTagIndex] + _resultsUITextArray[3].text + "</color>";
+        _resultsUITextArray[4].text = colorTag[colorTagIndex] + _resultsUITextArray[4].text + "</color>";
+        _resultsUITextArray[5].text = colorTag[colorTagIndex] + _resultsUITextArray[5].text + "</color>";
+        _resultsUITextArray[6].text = colorTag[colorTagIndex] + _resultsUITextArray[6].text + "</color>";
 
         //ToDo Set endscreen graphics based on score.
         //ToDo Play Audio based on score

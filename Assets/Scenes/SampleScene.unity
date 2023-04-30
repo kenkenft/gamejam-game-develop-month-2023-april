@@ -386,7 +386,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5009580196961016647, guid: b5b682033bebb1c4fb5d21984dc00de8, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6392509867713573547, guid: b5b682033bebb1c4fb5d21984dc00de8, type: 3}
       propertyPath: m_SortingOrder
@@ -1218,7 +1218,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: fd87a2504fd0a3f41aea483b6de2f03b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 728c9bb5e53fe9e4da691eeff17fb9d3, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1490,7 +1490,7 @@ RectTransform:
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &542236049
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1508,10 +1508,10 @@ MonoBehaviour:
     m_Right: 0
     m_Top: 0
     m_Bottom: 0
-  m_ChildAlignment: 0
-  m_StartCorner: 0
+  m_ChildAlignment: 2
+  m_StartCorner: 1
   m_StartAxis: 0
-  m_CellSize: {x: 350, y: 60}
+  m_CellSize: {x: 200, y: 55}
   m_Spacing: {x: 0, y: 0}
   m_Constraint: 1
   m_ConstraintCount: 1
@@ -2020,7 +2020,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Score: '
+  m_Text: 'Score:'
 --- !u!222 &747153775
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2137,7 +2137,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Grade: '
+  m_Text: 'Grade:'
 --- !u!222 &799627085
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2611,7 +2611,7 @@ RectTransform:
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_Pivot: {x: 1.4, y: 0.5}
 --- !u!114 &880215112
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2632,7 +2632,7 @@ MonoBehaviour:
   m_ChildAlignment: 0
   m_StartCorner: 0
   m_StartAxis: 0
-  m_CellSize: {x: 350, y: 60}
+  m_CellSize: {x: 300, y: 55}
   m_Spacing: {x: 0, y: 0}
   m_Constraint: 1
   m_ConstraintCount: 1
@@ -2697,7 +2697,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5009580196961016647, guid: b5b682033bebb1c4fb5d21984dc00de8, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6392509867713573547, guid: b5b682033bebb1c4fb5d21984dc00de8, type: 3}
       propertyPath: m_SortingOrder
@@ -2740,8 +2740,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 240.00002}
-  m_SizeDelta: {x: 600, y: 0}
+  m_AnchoredPosition: {x: 0, y: 300}
+  m_SizeDelta: {x: 600, y: 120}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &960602046
 MonoBehaviour:
@@ -3792,7 +3792,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5009580196961016647, guid: b5b682033bebb1c4fb5d21984dc00de8, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6392509867713573547, guid: b5b682033bebb1c4fb5d21984dc00de8, type: 3}
       propertyPath: m_SortingOrder
@@ -3836,8 +3836,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: 100}
-  m_SizeDelta: {x: 600, y: 100}
+  m_AnchoredPosition: {x: 239, y: 169}
+  m_SizeDelta: {x: 450, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1547145337
 MonoBehaviour:
@@ -3860,7 +3860,7 @@ MonoBehaviour:
   m_StartCorner: 0
   m_StartAxis: 0
   m_CellSize: {x: 200, y: 50}
-  m_Spacing: {x: 100, y: 0}
+  m_Spacing: {x: -40, y: 0}
   m_Constraint: 1
   m_ConstraintCount: 2
 --- !u!1 &1555868641
@@ -4056,7 +4056,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Total Coins: '
+  m_Text: 'Coins:'
 --- !u!222 &1648614180
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5214,6 +5214,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f029918c24413a449b8f665e7018b87a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  EndResultScreens: []
   _instructionTextArray:
   - {fileID: 795805421}
   - {fileID: 1943190875}
@@ -5222,6 +5223,10 @@ MonoBehaviour:
   - {fileID: 1944979852}
   - {fileID: 362485654}
   - {fileID: 868002772}
+  - {fileID: 747153774}
+  - {fileID: 799627084}
+  - {fileID: 1648614179}
+  - {fileID: 960602046}
 --- !u!1 &2121830422
 GameObject:
   m_ObjectHideFlags: 0
@@ -5452,7 +5457,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5009580196961016647, guid: b5b682033bebb1c4fb5d21984dc00de8, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6392509867713573547, guid: b5b682033bebb1c4fb5d21984dc00de8, type: 3}
       propertyPath: m_SortingOrder

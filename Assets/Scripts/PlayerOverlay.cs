@@ -25,7 +25,7 @@ public class PlayerOverlay : MonoBehaviour
 
     public void GameStartSetUp()
     {
-        StartTimer(999);
+        StartTimer(10);
         ResetOverlay();
     }
 
