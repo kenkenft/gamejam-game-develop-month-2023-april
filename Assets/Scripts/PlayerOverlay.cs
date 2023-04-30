@@ -25,6 +25,10 @@ public class PlayerOverlay : MonoBehaviour
 
     public void GameStartSetUp()
     {
+        playerOverlayCanvas = GetComponentInChildren<Canvas>();
+        
+        scoreTextProperties = GetComponentInChildren<ScoreTextProperties>();
+        timer = GetComponentInChildren<Timer>();
         StartTimer(120);
         ResetOverlay();
     }

@@ -109,15 +109,28 @@ public class CoinSpawner : MonoBehaviour
     private CoinScriptable SelectRandomCoinValue()
     {
         _tempInt =  Random.Range(0,100);
+        Debug.Log("_tempInt: " + _tempInt);
 
         if(_tempInt > 95)
+        {    
+            Debug.Log("Gold coin!: " + (_coinTypes.Count-1));
             return _coinTypes[_coinTypes.Count-1];
+        }
         else if (_tempInt <= 95 && _tempInt > 85)
+        {    
+            Debug.Log("Silver coin!: " + (_coinTypes.Count-1));
             return _coinTypes[2];
+        }
         else if (_tempInt <= 85 && _tempInt > 60)
+        {    
+            Debug.Log("Copper coin!: " + (_coinTypes.Count-1));
             return _coinTypes[1];
+        }
         else
+        {
+            Debug.Log("Other coin!: " + (_coinTypes.Count-1));
             return _coinTypes[0];
+        }
     } 
 
     private void ClearField()
