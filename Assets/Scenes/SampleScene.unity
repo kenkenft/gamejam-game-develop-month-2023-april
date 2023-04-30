@@ -5217,6 +5217,7 @@ MonoBehaviour:
   ResultsPanelImage: {fileID: 514593672}
   EndResultImages:
   - {fileID: 21300000, guid: 728c9bb5e53fe9e4da691eeff17fb9d3, type: 3}
+  - {fileID: 21300000, guid: 8c1041bc3c2d9dd4aae3b73779b15ab9, type: 3}
   _instructionTextArray:
   - {fileID: 795805421}
   - {fileID: 1943190875}

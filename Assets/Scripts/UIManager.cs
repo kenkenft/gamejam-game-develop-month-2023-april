@@ -180,12 +180,12 @@ public class UIManager : MonoBehaviour
 
         ResultsPanelImage.sprite = EndResultImages[colorTagIndex];
         _resultsUITextArray[0].text = colorTag[colorTagIndex] + tempString + "</color>";
-        _resultsUITextArray[1].text = colorTag[colorTagIndex] + _resultsUITextArray[1].text + "</color>";
-        _resultsUITextArray[2].text = colorTag[colorTagIndex] + _resultsUITextArray[2].text + "</color>";
-        _resultsUITextArray[3].text = colorTag[colorTagIndex] + _resultsUITextArray[3].text + "</color>";
-        _resultsUITextArray[4].text = colorTag[colorTagIndex] + _resultsUITextArray[4].text + "</color>";
-        _resultsUITextArray[5].text = colorTag[colorTagIndex] + _resultsUITextArray[5].text + "</color>";
-        _resultsUITextArray[6].text = colorTag[colorTagIndex] + _resultsUITextArray[6].text + "</color>";
+        _resultsUITextArray[1].text = colorTag[colorTagIndex] + _resultsUITextArray[1].text.ToString() + "</color>";
+        _resultsUITextArray[2].text = colorTag[colorTagIndex] + _resultsUITextArray[2].text.ToString() + "</color>";
+        _resultsUITextArray[3].text = colorTag[colorTagIndex] + _resultsUITextArray[3].text.ToString() + "</color>";
+        _resultsUITextArray[4].text = colorTag[colorTagIndex] + _resultsUITextArray[4].text.ToString() + "</color>";
+        _resultsUITextArray[5].text = colorTag[colorTagIndex] + _resultsUITextArray[5].text.ToString() + "</color>";
+        _resultsUITextArray[6].text = colorTag[colorTagIndex] + _resultsUITextArray[6].text.ToString() + "</color>";
 
         //ToDo Set endscreen graphics based on score.
         //ToDo Play Audio based on score
